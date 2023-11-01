@@ -1,0 +1,499 @@
+id.exposure	id.outcome	outcome	exposure	method	nsnp	b	se	pval	fdrp
+cisCRP	met-d-Acetate	Acetate || id:met-d-Acetate	cisCRP	Inverse variance weighted	4	-0.0522128454225953	0.01581508701750919	9.618373686442312e-4	0.3529943142924329
+cisCRP	met-d-Acetoacetate	Acetoacetate || id:met-d-Acetoacetate	cisCRP	Inverse variance weighted	4	0.029224381512733	0.02567900435132078	0.2550932533479453	1
+cisCRP	met-d-Acetone	Acetone || id:met-d-Acetone	cisCRP	Inverse variance weighted	4	0.012098837429477928	0.01571564204629828	0.4413831987374327	1
+cisCRP	met-d-Ala	Alanine || id:met-d-Ala	cisCRP	Inverse variance weighted	4	0.023731192599613142	0.015573556059861608	0.12755534421172965	1
+cisCRP	met-d-Albumin	Albumin || id:met-d-Albumin	cisCRP	Inverse variance weighted	4	0.002609752000157796	0.015709894177101925	0.8680612938771527	1
+cisCRP	met-d-ApoA1	Apolipoprotein A1 || id:met-d-ApoA1	cisCRP	Inverse variance weighted	4	-0.031235844464366443	0.014365337329851104	0.029675865625484393	1
+cisCRP	met-d-ApoB	Apolipoprotein B || id:met-d-ApoB	cisCRP	Inverse variance weighted	4	-0.029339949112838503	0.015673778420392952	0.06121864492569758	1
+cisCRP	met-d-ApoB_by_ApoA1	Ratio of apolipoprotein B to apolipoprotein A1 || id:met-d-ApoB_by_ApoA1	cisCRP	Inverse variance weighted	4	-0.008258325821897205	0.015452047064876809	0.5930311618105442	1
+cisCRP	met-d-bOHbutyrate	3-Hydroxybutyrate || id:met-d-bOHbutyrate	cisCRP	Inverse variance weighted	4	0.03378340679542359	0.015686621883297343	0.03126806239052156	1
+cisCRP	met-d-Cholines	Total cholines || id:met-d-Cholines	cisCRP	Inverse variance weighted	4	-0.030888431971788182	0.014762766983414152	0.03640990367964091	1
+cisCRP	met-d-Citrate	Citrate || id:met-d-Citrate	cisCRP	Inverse variance weighted	4	-0.009956205599655476	0.015604966191819268	0.5234637867003618	1
+cisCRP	met-d-Clinical_LDL_C	Clinical LDL cholesterol || id:met-d-Clinical_LDL_C	cisCRP	Inverse variance weighted	4	-0.039944730138908306	0.01560451905485814	0.01047269663796256	1
+cisCRP	met-d-Creatinine	Creatinine || id:met-d-Creatinine	cisCRP	Inverse variance weighted	4	0.009219457390981891	0.013533680858896287	0.4957302698344427	1
+cisCRP	met-d-DHA	Docosahexaenoic acid || id:met-d-DHA	cisCRP	Inverse variance weighted	4	-0.01713074450780682	0.01517577927478416	0.2589731804021382	1
+cisCRP	met-d-DHA_pct	Ratio of docosahexaenoic acid to total fatty acids || id:met-d-DHA_pct	cisCRP	Inverse variance weighted	4	-0.018407156668251	0.0152810072195615	0.22836646738605704	1
+cisCRP	met-d-Gln	Glutamine || id:met-d-Gln	cisCRP	Inverse variance weighted	4	0.022923687003730164	0.016039009199166374	0.15293358967350137	1
+cisCRP	met-d-Glucose	Glucose || id:met-d-Glucose	cisCRP	Inverse variance weighted	4	0.022735889611921373	0.024578532430056522	0.35495009611861816	1
+cisCRP	met-d-Gly	Glycine || id:met-d-Gly	cisCRP	Inverse variance weighted	4	0.005962139985933895	0.01578817694751609	0.7057030882551351	1
+cisCRP	met-d-GlycA	Glycoprotein acetyls || id:met-d-GlycA	cisCRP	Inverse variance weighted	4	0.0514392067356992	0.015632714017245107	0.0010001493056354706	0.36605464586258224
+cisCRP	met-d-HDL_C	HDL cholesterol || id:met-d-HDL_C	cisCRP	Inverse variance weighted	4	-0.04262099262003854	0.014019236447677136	0.002364373354057203	0.8015225670253918
+cisCRP	met-d-HDL_CE	Cholesteryl esters in HDL || id:met-d-HDL_CE	cisCRP	Inverse variance weighted	4	-0.04243926060926013	0.014089854055706183	0.0025949496694121017	0.8641182399142299
+cisCRP	met-d-HDL_FC	Free cholesterol in HDL || id:met-d-HDL_FC	cisCRP	Inverse variance weighted	4	-0.04077042748076491	0.013908484972190324	0.00337508707979053	1
+cisCRP	met-d-HDL_L	Total lipids in HDL || id:met-d-HDL_L	cisCRP	Inverse variance weighted	4	-0.03420775897899305	0.014095579410532985	0.015230843124042534	1
+cisCRP	met-d-HDL_P	Concentration of HDL particles || id:met-d-HDL_P	cisCRP	Inverse variance weighted	4	-0.029980550828253433	0.01474108408062017	0.0419708474867884	1
+cisCRP	met-d-HDL_PL	Phospholipids in HDL || id:met-d-HDL_PL	cisCRP	Inverse variance weighted	4	-0.02890582514826508	0.014189693765834328	0.041640022068079985	1
+cisCRP	met-d-HDL_size	Average diameter for HDL particles || id:met-d-HDL_size	cisCRP	Inverse variance weighted	4	-0.040863020551506424	0.013905663878456659	0.00329710771390136	1
+cisCRP	met-d-HDL_TG	Triglycerides in HDL || id:met-d-HDL_TG	cisCRP	Inverse variance weighted	4	0.02641572808612563	0.01547945498289078	0.0879145677442308	1
+cisCRP	met-d-His	Histidine || id:met-d-His	cisCRP	Inverse variance weighted	4	0.005927303765225156	0.022392599615424422	0.7912411745215789	1
+cisCRP	met-d-IDL_C	Cholesterol in IDL || id:met-d-IDL_C	cisCRP	Inverse variance weighted	4	-0.05259640978931067	0.015155806626100842	5.197223120767089e-4	0.20096471375899352
+cisCRP	met-d-IDL_C_pct	Cholesterol to total lipids ratio in IDL || id:met-d-IDL_C_pct	cisCRP	Inverse variance weighted	4	-0.058832211547017677	0.015325800416842915	1.2365256311517038e-4	0.05106850856656537
+cisCRP	met-d-IDL_CE	Cholesteryl esters in IDL || id:met-d-IDL_CE	cisCRP	Inverse variance weighted	4	-0.052448350947031944	0.01515116114910786	5.368308866267465e-4	0.2066798913512974
+cisCRP	met-d-IDL_CE_pct	Cholesteryl esters to total lipids ratio in IDL || id:met-d-IDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.055289268719088513	0.015406486691545054	3.323301739152956e-4	0.13293206956611825
+cisCRP	met-d-IDL_FC	Free cholesterol in IDL || id:met-d-IDL_FC	cisCRP	Inverse variance weighted	4	-0.052002922396038175	0.01519237228105507	6.194259521204417e-4	0.23414300990152695
+cisCRP	met-d-IDL_FC_pct	Free cholesterol to total lipids ratio in IDL || id:met-d-IDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.033583175172402537	0.015580277099336065	0.03112329113209966	1
+cisCRP	met-d-IDL_L	Total lipids in IDL || id:met-d-IDL_L	cisCRP	Inverse variance weighted	4	-0.04932381017505534	0.01517339973876711	0.0011513088076666347	0.41562247956765513
+cisCRP	met-d-IDL_P	Concentration of IDL particles || id:met-d-IDL_P	cisCRP	Inverse variance weighted	4	-0.04373735071685795	0.015531724773654115	0.004862553264611991	1
+cisCRP	met-d-IDL_PL	Phospholipids in IDL || id:met-d-IDL_PL	cisCRP	Inverse variance weighted	4	-0.04838223127026793	0.015141998185464084	0.0013971738668126545	0.493202374984867
+cisCRP	met-d-IDL_PL_pct	Phospholipids to total lipids ratio in IDL || id:met-d-IDL_PL_pct	cisCRP	Inverse variance weighted	4	0.029706279492468225	0.01576704113773979	0.059554904556354024	1
+cisCRP	met-d-IDL_TG	Triglycerides in IDL || id:met-d-IDL_TG	cisCRP	Inverse variance weighted	4	0.01738212921546293	0.015513030596013238	0.2625068356254152	1
+cisCRP	met-d-IDL_TG_pct	Triglycerides to total lipids ratio in IDL || id:met-d-IDL_TG_pct	cisCRP	Inverse variance weighted	4	0.0642025129459331	0.015162017562989603	2.2913140810102526e-5	0.010013042534014804
+cisCRP	met-d-Ile	Isoleucine || id:met-d-Ile	cisCRP	Inverse variance weighted	4	0.042992098953682036	0.017483150880484275	0.013930173539817627	1
+cisCRP	met-d-L_HDL_C	Cholesterol in large HDL || id:met-d-L_HDL_C	cisCRP	Inverse variance weighted	4	-0.04784119268665754	0.013822277079206932	5.378414569169003e-4	0.2066798913512974
+cisCRP	met-d-L_HDL_C_pct	Cholesterol to total lipids ratio in large HDL || id:met-d-L_HDL_C_pct	cisCRP	Inverse variance weighted	4	-0.057612674151724136	0.014793028698149696	9.836791395935403e-5	0.04121615594896934
+cisCRP	met-d-L_HDL_CE	Cholesteryl esters in large HDL || id:met-d-L_HDL_CE	cisCRP	Inverse variance weighted	4	-0.04789571915684821	0.013860099235492229	5.489577673067641e-4	0.20915290934387712
+cisCRP	met-d-L_HDL_CE_pct	Cholesteryl esters to total lipids ratio in large HDL || id:met-d-L_HDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.054347592724643325	0.015017504608779143	2.958012026543402e-4	0.11891208346704475
+cisCRP	met-d-L_HDL_FC	Free cholesterol in large HDL || id:met-d-L_HDL_FC	cisCRP	Inverse variance weighted	4	-0.046020641848760153	0.013756291346850304	8.215655634303653e-4	0.3048008240326655
+cisCRP	met-d-L_HDL_FC_pct	Free cholesterol to total lipids ratio in large HDL || id:met-d-L_HDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.04308913950647915	0.014586021850141573	0.003135425033824494	1
+cisCRP	met-d-L_HDL_L	Total lipids in large HDL || id:met-d-L_HDL_L	cisCRP	Inverse variance weighted	4	-0.043481276788739344	0.013772762042722096	0.0015937487386899268	0.5609995560188542
+cisCRP	met-d-L_HDL_P	Concentration of large HDL particles || id:met-d-L_HDL_P	cisCRP	Inverse variance weighted	4	-0.04679070126289992	0.013746671738767962	6.645928606392342e-4	0.24922232273971284
+cisCRP	met-d-L_HDL_PL	Phospholipids in large HDL || id:met-d-L_HDL_PL	cisCRP	Inverse variance weighted	4	-0.03885104851696541	0.01381525102781138	0.0049206117893514515	1
+cisCRP	met-d-L_HDL_PL_pct	Phospholipids to total lipids ratio in large HDL || id:met-d-L_HDL_PL_pct	cisCRP	Inverse variance weighted	4	0.06483747163481754	0.015183069306935353	1.9514041811635463e-5	0.008566664355307969
+cisCRP	met-d-L_HDL_TG	Triglycerides in large HDL || id:met-d-L_HDL_TG	cisCRP	Inverse variance weighted	4	-0.0011516445140520824	0.015072905408911966	0.9390969352876788	1
+cisCRP	met-d-L_HDL_TG_pct	Triglycerides to total lipids ratio in large HDL || id:met-d-L_HDL_TG_pct	cisCRP	Inverse variance weighted	4	0.0413332280348257	0.01481974634046867	0.005286054050083467	1
+cisCRP	met-d-L_LDL_C	Cholesterol in large LDL || id:met-d-L_LDL_C	cisCRP	Inverse variance weighted	4	-0.040829620461449195	0.015517497957895608	0.008508427405581874	1
+cisCRP	met-d-L_LDL_C_pct	Cholesterol to total lipids ratio in large LDL || id:met-d-L_LDL_C_pct	cisCRP	Inverse variance weighted	4	-0.057101540437850075	0.015292740904578092	1.8853859319384965e-4	0.07711228461628451
+cisCRP	met-d-L_LDL_CE	Cholesteryl esters in large LDL || id:met-d-L_LDL_CE	cisCRP	Inverse variance weighted	4	-0.03772059014299793	0.015554651025638638	0.015306864889484822	1
+cisCRP	met-d-L_LDL_CE_pct	Cholesteryl esters to total lipids ratio in large LDL || id:met-d-L_LDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.014976411517514068	0.015743836521108744	0.34147467674193926	1
+cisCRP	met-d-L_LDL_FC	Free cholesterol in large LDL || id:met-d-L_LDL_FC	cisCRP	Inverse variance weighted	4	-0.048044390715183065	0.015409546388993728	0.0018218606522424226	0.6303637856758783
+cisCRP	met-d-L_LDL_FC_pct	Free cholesterol to total lipids ratio in large LDL || id:met-d-L_LDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.06455799266355243	0.014959142704456325	1.5915473374461458e-5	0.007034639231511965
+cisCRP	met-d-L_LDL_L	Total lipids in large LDL || id:met-d-L_LDL_L	cisCRP	Inverse variance weighted	4	-0.03899671412957644	0.015541525274863566	0.01210067385731185	1
+cisCRP	met-d-L_LDL_P	Concentration of large LDL particles || id:met-d-L_LDL_P	cisCRP	Inverse variance weighted	4	-0.03309931863822235	0.015638503965665598	0.03429999638928345	1
+cisCRP	met-d-L_LDL_PL	Phospholipids in large LDL || id:met-d-L_LDL_PL	cisCRP	Inverse variance weighted	4	-0.04042833300317488	0.015577619816566454	0.009451304335197393	1
+cisCRP	met-d-L_LDL_PL_pct	Phospholipids to total lipids ratio in large LDL || id:met-d-L_LDL_PL_pct	cisCRP	Inverse variance weighted	4	-7.25001354203729e-4	0.015707037399556197	0.963184524853204	1
+cisCRP	met-d-L_LDL_TG	Triglycerides in large LDL || id:met-d-L_LDL_TG	cisCRP	Inverse variance weighted	4	0.016821423956660846	0.015553728240437052	0.27947284944228834	1
+cisCRP	met-d-L_LDL_TG_pct	Triglycerides to total lipids ratio in large LDL || id:met-d-L_LDL_TG_pct	cisCRP	Inverse variance weighted	4	0.060296852579482356	0.015390126279721809	8.932671011284082e-5	0.03760654495750598
+cisCRP	met-d-L_VLDL_C	Cholesterol in large VLDL || id:met-d-L_VLDL_C	cisCRP	Inverse variance weighted	4	0.0163213714492772	0.015351855064822542	0.2877125524492822	1
+cisCRP	met-d-L_VLDL_C_pct	Cholesterol to total lipids ratio in large VLDL || id:met-d-L_VLDL_C_pct	cisCRP	Inverse variance weighted	4	-0.03859756765810564	0.015335840060654263	0.01184189010800786	1
+cisCRP	met-d-L_VLDL_CE	Cholesteryl esters in large VLDL || id:met-d-L_VLDL_CE	cisCRP	Inverse variance weighted	4	0.008369663735549572	0.015507483520958569	0.5893917138620226	1
+cisCRP	met-d-L_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in large VLDL || id:met-d-L_VLDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.04875288658734704	0.015020235567732066	0.001171154480027393	0.4204444583298341
+cisCRP	met-d-L_VLDL_FC	Free cholesterol in large VLDL || id:met-d-L_VLDL_FC	cisCRP	Inverse variance weighted	4	0.023696046390120983	0.01518275267297946	0.11858950934976749	1
+cisCRP	met-d-L_VLDL_FC_pct	Free cholesterol to total lipids ratio in large VLDL || id:met-d-L_VLDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.0025480964108837044	0.01555678847647314	0.869893932619349	1
+cisCRP	met-d-L_VLDL_L	Total lipids in large VLDL || id:met-d-L_VLDL_L	cisCRP	Inverse variance weighted	4	0.024808279447664294	0.015169096352508524	0.10195501302093687	1
+cisCRP	met-d-L_VLDL_P	Concentration of large VLDL particles || id:met-d-L_VLDL_P	cisCRP	Inverse variance weighted	4	0.02631005767549615	0.015155963718742605	0.08257194707558604	1
+cisCRP	met-d-L_VLDL_PL	Phospholipids in large VLDL || id:met-d-L_VLDL_PL	cisCRP	Inverse variance weighted	4	0.026794043388185806	0.015144655468234087	0.0768591941303703	1
+cisCRP	met-d-L_VLDL_PL_pct	Phospholipids to total lipids ratio in large VLDL || id:met-d-L_VLDL_PL_pct	cisCRP	Inverse variance weighted	4	0.028052072562760946	0.015242413367953862	0.06571015908808601	1
+cisCRP	met-d-L_VLDL_TG	Triglycerides in large VLDL || id:met-d-L_VLDL_TG	cisCRP	Inverse variance weighted	4	0.027015878705327515	0.015103762626527736	0.07366550612464641	1
+cisCRP	met-d-L_VLDL_TG_pct	Triglycerides to total lipids ratio in large VLDL || id:met-d-L_VLDL_TG_pct	cisCRP	Inverse variance weighted	4	0.017277784113461172	0.015629052188523743	0.2689466820012117	1
+cisCRP	met-d-LA	Linoleic acid || id:met-d-LA	cisCRP	Inverse variance weighted	4	-0.02803645883739374	0.015712507567591776	0.0743684023604777	1
+cisCRP	met-d-LA_pct	Ratio of linoleic acid to total fatty acids || id:met-d-LA_pct	cisCRP	Inverse variance weighted	4	-0.05098617633599553	0.015361510945072324	9.031260203617338e-4	0.332350375493118
+cisCRP	met-d-Lactate	Lactate || id:met-d-Lactate	cisCRP	Inverse variance weighted	4	0.007119253300050273	0.028402601159700683	0.8020808737906091	1
+cisCRP	met-d-LDL_C	LDL cholesterol || id:met-d-LDL_C	cisCRP	Inverse variance weighted	4	-0.03457393507153234	0.015627373994931675	0.026939335554908468	1
+cisCRP	met-d-LDL_CE	Cholesteryl esters in LDL || id:met-d-LDL_CE	cisCRP	Inverse variance weighted	4	-0.030577772060119343	0.015654465278987895	0.05078477594326347	1
+cisCRP	met-d-LDL_FC	Free cholesterol in LDL || id:met-d-LDL_FC	cisCRP	Inverse variance weighted	4	-0.04362936819492972	0.015526035074774623	0.004952950857523752	1
+cisCRP	met-d-LDL_L	Total lipids in LDL || id:met-d-LDL_L	cisCRP	Inverse variance weighted	4	-0.032517946023924875	0.01564277169596352	0.03763719341396868	1
+cisCRP	met-d-LDL_P	Concentration of LDL particles || id:met-d-LDL_P	cisCRP	Inverse variance weighted	4	-0.028448181015064036	0.015682272295504177	0.06967243376733098	1
+cisCRP	met-d-LDL_PL	Phospholipids in LDL || id:met-d-LDL_PL	cisCRP	Inverse variance weighted	4	-0.03379426211245059	0.015659167763745593	0.030919004614405755	1
+cisCRP	met-d-LDL_size	Average diameter for LDL particles || id:met-d-LDL_size	cisCRP	Inverse variance weighted	4	-0.03932017570318963	0.015350636832803926	0.010423063417992307	1
+cisCRP	met-d-LDL_TG	Triglycerides in LDL || id:met-d-LDL_TG	cisCRP	Inverse variance weighted	4	0.02181996568210993	0.01552337352236914	0.15983696727012847	1
+cisCRP	met-d-Leu	Leucine || id:met-d-Leu	cisCRP	Inverse variance weighted	4	0.035883694093054225	0.016005770976644292	0.024966397693519236	1
+cisCRP	met-d-M_HDL_C	Cholesterol in medium HDL || id:met-d-M_HDL_C	cisCRP	Inverse variance weighted	4	-0.03028636112222223	0.014444444543342342	0.0360158833570875	1
+cisCRP	met-d-M_HDL_C_pct	Cholesterol to total lipids ratio in medium HDL || id:met-d-M_HDL_C_pct	cisCRP	Inverse variance weighted	4	-0.044084276277824644	0.014946968511838086	0.0031841314567741742	1
+cisCRP	met-d-M_HDL_CE	Cholesteryl esters in medium HDL || id:met-d-M_HDL_CE	cisCRP	Inverse variance weighted	4	-0.02999907036518117	0.014498054002813851	0.03852928299374781	1
+cisCRP	met-d-M_HDL_CE_pct	Cholesteryl esters to total lipids ratio in medium HDL || id:met-d-M_HDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.03907131081773996	0.015225484366760876	0.010282589434151038	1
+cisCRP	met-d-M_HDL_FC	Free cholesterol in medium HDL || id:met-d-M_HDL_FC	cisCRP	Inverse variance weighted	4	-0.03074389481252654	0.014285949138354362	0.03139442001735677	1
+cisCRP	met-d-M_HDL_FC_pct	Free cholesterol to total lipids ratio in medium HDL || id:met-d-M_HDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.04521615432107864	0.01391684642265078	0.0011580210848905392	0.4168875905605941
+cisCRP	met-d-M_HDL_L	Total lipids in medium HDL || id:met-d-M_HDL_L	cisCRP	Inverse variance weighted	4	-0.022515310313884415	0.01457140431047334	0.12230492447341465	1
+cisCRP	met-d-M_HDL_P	Concentration of medium HDL particles || id:met-d-M_HDL_P	cisCRP	Inverse variance weighted	4	-0.027492009410164987	0.014460124878662472	0.05727201829990429	1
+cisCRP	met-d-M_HDL_PL	Phospholipids in medium HDL || id:met-d-M_HDL_PL	cisCRP	Inverse variance weighted	4	-0.01724633544783017	0.014676434700783262	0.23995315621422156	1
+cisCRP	met-d-M_HDL_PL_pct	Phospholipids to total lipids ratio in medium HDL || id:met-d-M_HDL_PL_pct	cisCRP	Inverse variance weighted	4	0.04822123224312399	0.014890114356817818	0.0012017142506694919	0.4290119874890086
+cisCRP	met-d-M_HDL_TG	Triglycerides in medium HDL || id:met-d-M_HDL_TG	cisCRP	Inverse variance weighted	4	0.025900449078902325	0.015503130009934798	0.09478898272990152	1
+cisCRP	met-d-M_HDL_TG_pct	Triglycerides to total lipids ratio in medium HDL || id:met-d-M_HDL_TG_pct	cisCRP	Inverse variance weighted	4	0.038748820781855854	0.015058130941287494	0.010073902116340095	1
+cisCRP	met-d-M_LDL_C	Cholesterol in medium LDL || id:met-d-M_LDL_C	cisCRP	Inverse variance weighted	4	-0.021173982304126593	0.01572636484512832	0.17817345509390364	1
+cisCRP	met-d-M_LDL_C_pct	Cholesterol to total lipids ratio in medium LDL || id:met-d-M_LDL_C_pct	cisCRP	Inverse variance weighted	4	-0.035835072072640396	0.01812148057033972	0.0479861111064828	1
+cisCRP	met-d-M_LDL_CE	Cholesteryl esters in medium LDL || id:met-d-M_LDL_CE	cisCRP	Inverse variance weighted	4	-0.015573745950537142	0.015719264165637542	0.32181124347204343	1
+cisCRP	met-d-M_LDL_CE_pct	Cholesteryl esters to total lipids ratio in medium LDL || id:met-d-M_LDL_CE_pct	cisCRP	Inverse variance weighted	4	0.01848605207802799	0.015635706672431905	0.23708779977336567	1
+cisCRP	met-d-M_LDL_FC	Free cholesterol in medium LDL || id:met-d-M_LDL_FC	cisCRP	Inverse variance weighted	4	-0.0348151293788561	0.015676158830123625	0.026357958957343514	1
+cisCRP	met-d-M_LDL_FC_pct	Free cholesterol to total lipids ratio in medium LDL || id:met-d-M_LDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.0544671608656537	0.01503737709284361	2.9220027165000533e-4	0.11775670947495215
+cisCRP	met-d-M_LDL_L	Total lipids in medium LDL || id:met-d-M_LDL_L	cisCRP	Inverse variance weighted	4	-0.019837447647674238	0.015719028878086967	0.2069480262965047	1
+cisCRP	met-d-M_LDL_P	Concentration of medium LDL particles || id:met-d-M_LDL_P	cisCRP	Inverse variance weighted	4	-0.018736942384333436	0.01574354439046747	0.23399335621216977	1
+cisCRP	met-d-M_LDL_PL	Phospholipids in medium LDL || id:met-d-M_LDL_PL	cisCRP	Inverse variance weighted	4	-0.022268032006097	0.015718405809346855	0.15657500223361234	1
+cisCRP	met-d-M_LDL_PL_pct	Phospholipids to total lipids ratio in medium LDL || id:met-d-M_LDL_PL_pct	cisCRP	Inverse variance weighted	4	-0.016198789164344817	0.01569607123978763	0.30205887679467636	1
+cisCRP	met-d-M_LDL_TG	Triglycerides in medium LDL || id:met-d-M_LDL_TG	cisCRP	Inverse variance weighted	4	0.027194466939922602	0.015465324935825989	0.078676839239983	1
+cisCRP	met-d-M_LDL_TG_pct	Triglycerides to total lipids ratio in medium LDL || id:met-d-M_LDL_TG_pct	cisCRP	Inverse variance weighted	4	0.05771031760358296	0.015498765510944085	1.964464957323161e-4	0.08015017025878496
+cisCRP	met-d-M_VLDL_C	Cholesterol in medium VLDL || id:met-d-M_VLDL_C	cisCRP	Inverse variance weighted	4	-0.035550501394565066	0.015651403925244802	0.023123151115031437	1
+cisCRP	met-d-M_VLDL_C_pct	Cholesterol to total lipids ratio in medium VLDL || id:met-d-M_VLDL_C_pct	cisCRP	Inverse variance weighted	4	-0.06326494028803792	0.014772229159238506	1.8464384765227e-5	0.00812432929669988
+cisCRP	met-d-M_VLDL_CE	Cholesteryl esters in medium VLDL || id:met-d-M_VLDL_CE	cisCRP	Inverse variance weighted	4	-0.044953599366034006	0.015550880822428418	0.0038433231570573294	1
+cisCRP	met-d-M_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in medium VLDL || id:met-d-M_VLDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.06392849019550412	0.014733477334762135	1.4313552657188818e-5	0.006369530932449024
+cisCRP	met-d-M_VLDL_FC	Free cholesterol in medium VLDL || id:met-d-M_VLDL_FC	cisCRP	Inverse variance weighted	4	-0.02017355362608259	0.015692451246231243	0.19859742074672893	1
+cisCRP	met-d-M_VLDL_FC_pct	Free cholesterol to total lipids ratio in medium VLDL || id:met-d-M_VLDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.06035898356138584	0.014922838496648496	5.2381496701130244e-5	0.022471662084784873
+cisCRP	met-d-M_VLDL_L	Total lipids in medium VLDL || id:met-d-M_VLDL_L	cisCRP	Inverse variance weighted	4	-7.344988904278324e-4	0.015587584831566902	0.9624169792439186	1
+cisCRP	met-d-M_VLDL_P	Concentration of medium VLDL particles || id:met-d-M_VLDL_P	cisCRP	Inverse variance weighted	4	-0.009941621491118192	0.015656149651786022	0.5254298121073167	1
+cisCRP	met-d-M_VLDL_PL	Phospholipids in medium VLDL || id:met-d-M_VLDL_PL	cisCRP	Inverse variance weighted	4	-0.013144288348849493	0.01567035528039691	0.40158175345535696	1
+cisCRP	met-d-M_VLDL_PL_pct	Phospholipids to total lipids ratio in medium VLDL || id:met-d-M_VLDL_PL_pct	cisCRP	Inverse variance weighted	4	-0.06265368300802224	0.015058725939896909	3.173804887232134e-5	0.013806051259459782
+cisCRP	met-d-M_VLDL_TG	Triglycerides in medium VLDL || id:met-d-M_VLDL_TG	cisCRP	Inverse variance weighted	4	0.024513463924371585	0.0152499209814015	0.10795599917631045	1
+cisCRP	met-d-M_VLDL_TG_pct	Triglycerides to total lipids ratio in medium VLDL || id:met-d-M_VLDL_TG_pct	cisCRP	Inverse variance weighted	4	0.06400495176126607	0.014821652234822534	1.5720625793068866e-5	0.006964237226329508
+cisCRP	met-d-MUFA	Monounsaturated fatty acids || id:met-d-MUFA	cisCRP	Inverse variance weighted	4	0.021013087448121748	0.01553800336762609	0.1762578491711959	1
+cisCRP	met-d-MUFA_pct	Ratio of monounsaturated fatty acids to total fatty acids || id:met-d-MUFA_pct	cisCRP	Inverse variance weighted	4	0.048766513313695414	0.015046183578948975	0.0011906030935401797	0.4262359074873843
+cisCRP	met-d-non_HDL_C	Total cholesterol minus HDL-C || id:met-d-non_HDL_C	cisCRP	Inverse variance weighted	4	-0.035696100723844014	0.015610446654633618	0.02221449081654906	1
+cisCRP	met-d-Omega_3	Omega-3 fatty acids || id:met-d-Omega_3	cisCRP	Inverse variance weighted	4	0.005766813560492254	0.015452347398099161	0.7089997160241688	1
+cisCRP	met-d-Omega_3_pct	Ratio of omega-3 fatty acids to total fatty acids || id:met-d-Omega_3_pct	cisCRP	Inverse variance weighted	4	0.006600894382659664	0.01656430617971992	0.6902608409728413	1
+cisCRP	met-d-Omega_6	Omega-6 fatty acids || id:met-d-Omega_6	cisCRP	Inverse variance weighted	4	-0.025111509213185525	0.015329944879200908	0.10140727725474627	1
+cisCRP	met-d-Omega_6_by_Omega_3	Ratio of omega-6 fatty acids to omega-3 fatty acids || id:met-d-Omega_6_by_Omega_3	cisCRP	Inverse variance weighted	4	-0.01687842688420223	0.0166156206909987	0.3097166273430054	1
+cisCRP	met-d-Omega_6_pct	Ratio of omega-6 fatty acids to total fatty acids || id:met-d-Omega_6_pct	cisCRP	Inverse variance weighted	4	-0.045862582584155785	0.015281416519180838	0.0026891814531141375	0.8928082424338937
+cisCRP	met-d-Phe	Phenylalanine || id:met-d-Phe	cisCRP	Inverse variance weighted	4	0.0025801743737049504	0.015714334480215038	0.8695796797779454	1
+cisCRP	met-d-Phosphatidylc	Phosphatidylcholines || id:met-d-Phosphatidylc	cisCRP	Inverse variance weighted	4	-0.029861964506390767	0.01470654348044554	0.04230347668279348	1
+cisCRP	met-d-Phosphoglyc	Phosphoglycerides || id:met-d-Phosphoglyc	cisCRP	Inverse variance weighted	4	-0.024561594554129478	0.01486834721738464	0.09854709745738871	1
+cisCRP	met-d-PUFA	Polyunsaturated fatty acids || id:met-d-PUFA	cisCRP	Inverse variance weighted	4	-0.018814659919336674	0.015309202183501862	0.21908036717571908	1
+cisCRP	met-d-PUFA_by_MUFA	Ratio of polyunsaturated fatty acids to monounsaturated fatty acids || id:met-d-PUFA_by_MUFA	cisCRP	Inverse variance weighted	4	-0.044367756924499666	0.01505274183365542	0.0032036849392427843	1
+cisCRP	met-d-PUFA_pct	Ratio of polyunsaturated fatty acids to total fatty acids || id:met-d-PUFA_pct	cisCRP	Inverse variance weighted	4	-0.037147345448108875	0.01510925128376518	0.013948660425339808	1
+cisCRP	met-d-Pyruvate	Pyruvate || id:met-d-Pyruvate	cisCRP	Inverse variance weighted	4	0.0016140938590172337	0.015735468677061326	0.918298864901683	1
+cisCRP	met-d-Remnant_C	Remnant cholesterol (non-HDL, non-LDL -cholesterol) || id:met-d-Remnant_C	cisCRP	Inverse variance weighted	4	-0.03490172908143284	0.015594849486677713	0.025219148656977435	1
+cisCRP	met-d-S_HDL_C	Cholesterol in small HDL || id:met-d-S_HDL_C	cisCRP	Inverse variance weighted	4	-0.010473901078210944	0.016016045677664143	0.513135651704903	1
+cisCRP	met-d-S_HDL_C_pct	Cholesterol to total lipids ratio in small HDL || id:met-d-S_HDL_C_pct	cisCRP	Inverse variance weighted	4	-0.0352126502691508	0.015513582517517558	0.023220030982786594	1
+cisCRP	met-d-S_HDL_CE	Cholesteryl esters in small HDL || id:met-d-S_HDL_CE	cisCRP	Inverse variance weighted	4	-0.009855135397527552	0.015728310665059666	0.5309308089619604	1
+cisCRP	met-d-S_HDL_CE_pct	Cholesteryl esters to total lipids ratio in small HDL || id:met-d-S_HDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.027658055305942193	0.015478465155408174	0.07395797719808715	1
+cisCRP	met-d-S_HDL_FC	Free cholesterol in small HDL || id:met-d-S_HDL_FC	cisCRP	Inverse variance weighted	4	-0.01185909398246791	0.015525958471105265	0.4449723521732285	1
+cisCRP	met-d-S_HDL_FC_pct	Free cholesterol to total lipids ratio in small HDL || id:met-d-S_HDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.03440979174176637	0.014884253096483965	0.020787316812732798	1
+cisCRP	met-d-S_HDL_L	Total lipids in small HDL || id:met-d-S_HDL_L	cisCRP	Inverse variance weighted	4	0.0017087237506526731	0.015644493380998523	0.9130263658650897	1
+cisCRP	met-d-S_HDL_P	Concentration of small HDL particles || id:met-d-S_HDL_P	cisCRP	Inverse variance weighted	4	-0.007488692831315124	0.016496401028412135	0.6498582008843252	1
+cisCRP	met-d-S_HDL_PL	Phospholipids in small HDL || id:met-d-S_HDL_PL	cisCRP	Inverse variance weighted	4	0.0027023516177555394	0.015560619253824846	0.8621279032123642	1
+cisCRP	met-d-S_HDL_PL_pct	Phospholipids to total lipids ratio in small HDL || id:met-d-S_HDL_PL_pct	cisCRP	Inverse variance weighted	4	0.0050093681959602005	0.015172850430619025	0.7412840538831582	1
+cisCRP	met-d-S_HDL_TG	Triglycerides in small HDL || id:met-d-S_HDL_TG	cisCRP	Inverse variance weighted	4	0.03864422666526236	0.015222152234197713	0.011127043489091215	1
+cisCRP	met-d-S_HDL_TG_pct	Triglycerides to total lipids ratio in small HDL || id:met-d-S_HDL_TG_pct	cisCRP	Inverse variance weighted	4	0.04432473185096885	0.014933561783060583	0.0029961894489382006	0.985746328700668
+cisCRP	met-d-S_LDL_C	Cholesterol in small LDL || id:met-d-S_LDL_C	cisCRP	Inverse variance weighted	4	-0.025015678820022248	0.015710717552409006	0.11132441402396573	1
+cisCRP	met-d-S_LDL_C_pct	Cholesterol to total lipids ratio in small LDL || id:met-d-S_LDL_C_pct	cisCRP	Inverse variance weighted	4	-0.038172374526002584	0.016892299508804637	0.02383676857343909	1
+cisCRP	met-d-S_LDL_CE	Cholesteryl esters in small LDL || id:met-d-S_LDL_CE	cisCRP	Inverse variance weighted	4	-0.019904599094742657	0.015703969162836	0.20498070088480042	1
+cisCRP	met-d-S_LDL_CE_pct	Cholesteryl esters to total lipids ratio in small LDL || id:met-d-S_LDL_CE_pct	cisCRP	Inverse variance weighted	4	0.0019397406661008855	0.01567072133630169	0.9014885188532755	1
+cisCRP	met-d-S_LDL_FC	Free cholesterol in small LDL || id:met-d-S_LDL_FC	cisCRP	Inverse variance weighted	4	-0.03543243490267881	0.015667170041293824	0.02372385241025286	1
+cisCRP	met-d-S_LDL_FC_pct	Free cholesterol to total lipids ratio in small LDL || id:met-d-S_LDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.05313435185215993	0.015212258531101924	4.7786962147952205e-4	0.18684702199849312
+cisCRP	met-d-S_LDL_L	Total lipids in small LDL || id:met-d-S_LDL_L	cisCRP	Inverse variance weighted	4	-0.022689854711892637	0.015690633745964043	0.14815578228074353	1
+cisCRP	met-d-S_LDL_P	Concentration of small LDL particles || id:met-d-S_LDL_P	cisCRP	Inverse variance weighted	4	-0.021530544025072307	0.015709996847479	0.1705310075330693	1
+cisCRP	met-d-S_LDL_PL	Phospholipids in small LDL || id:met-d-S_LDL_PL	cisCRP	Inverse variance weighted	4	-0.02487705908675405	0.015653670648793458	0.1120117041382994	1
+cisCRP	met-d-S_LDL_PL_pct	Phospholipids to total lipids ratio in small LDL || id:met-d-S_LDL_PL_pct	cisCRP	Inverse variance weighted	4	-0.0016846016858176333	0.015668342418180384	0.9143794209794158	1
+cisCRP	met-d-S_LDL_TG	Triglycerides in small LDL || id:met-d-S_LDL_TG	cisCRP	Inverse variance weighted	4	0.03275737750986376	0.015312386805064644	0.03241355525845516	1
+cisCRP	met-d-S_LDL_TG_pct	Triglycerides to total lipids ratio in small LDL || id:met-d-S_LDL_TG_pct	cisCRP	Inverse variance weighted	4	0.058279719830213975	0.015209340504023113	1.2718979116499302e-4	0.052402193959977125
+cisCRP	met-d-S_VLDL_C	Cholesterol in small VLDL || id:met-d-S_VLDL_C	cisCRP	Inverse variance weighted	4	-0.012825542239428118	0.015692379934320693	0.41375117712930615	1
+cisCRP	met-d-S_VLDL_C_pct	Cholesterol to total lipids ratio in small VLDL || id:met-d-S_VLDL_C_pct	cisCRP	Inverse variance weighted	4	-0.06017685215838605	0.015267029214836655	8.093258589648907e-5	0.034315416420111364
+cisCRP	met-d-S_VLDL_CE	Cholesteryl esters in small VLDL || id:met-d-S_VLDL_CE	cisCRP	Inverse variance weighted	4	-0.00782672037116969	0.01567358994144777	0.6175277480886242	1
+cisCRP	met-d-S_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in small VLDL || id:met-d-S_VLDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.047305468397674376	0.015482875509531821	0.002248045687278352	0.766583579361918
+cisCRP	met-d-S_VLDL_FC	Free cholesterol in small VLDL || id:met-d-S_VLDL_FC	cisCRP	Inverse variance weighted	4	-0.02123634961660784	0.01569751787636361	0.17610431772017052	1
+cisCRP	met-d-S_VLDL_FC_pct	Free cholesterol to total lipids ratio in small VLDL || id:met-d-S_VLDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.06756681724245314	0.014985225422583114	6.516595901953308e-6	0.002945501347682895
+cisCRP	met-d-S_VLDL_L	Total lipids in small VLDL || id:met-d-S_VLDL_L	cisCRP	Inverse variance weighted	4	0.008810314811597922	0.015539042002230791	0.5707282605161472	1
+cisCRP	met-d-S_VLDL_P	Concentration of small VLDL particles || id:met-d-S_VLDL_P	cisCRP	Inverse variance weighted	4	0.012359303073661808	0.015493489214723185	0.425039106892375	1
+cisCRP	met-d-S_VLDL_PL	Phospholipids in small VLDL || id:met-d-S_VLDL_PL	cisCRP	Inverse variance weighted	4	-0.007832104002916208	0.015663856482512332	0.6170671765352669	1
+cisCRP	met-d-S_VLDL_PL_pct	Phospholipids to total lipids ratio in small VLDL || id:met-d-S_VLDL_PL_pct	cisCRP	Inverse variance weighted	4	-0.06466616535419396	0.01501557325765441	1.6577813379688188e-5	0.007310815700442491
+cisCRP	met-d-S_VLDL_TG	Triglycerides in small VLDL || id:met-d-S_VLDL_TG	cisCRP	Inverse variance weighted	4	0.036203480535574414	0.015231985778002666	0.0174632533988608	1
+cisCRP	met-d-S_VLDL_TG_pct	Triglycerides to total lipids ratio in small VLDL || id:met-d-S_VLDL_TG_pct	cisCRP	Inverse variance weighted	4	0.06275628558661824	0.015182446238189286	3.573167592500282e-5	0.015436083999601218
+cisCRP	met-d-SFA	Saturated fatty acids || id:met-d-SFA	cisCRP	Inverse variance weighted	4	0.0014603909075564362	0.015557646654780554	0.9252127000193417	1
+cisCRP	met-d-SFA_pct	Ratio of saturated fatty acids to total fatty acids || id:met-d-SFA_pct	cisCRP	Inverse variance weighted	4	7.974719613746652e-4	0.01549639479176547	0.9589575616663931	1
+cisCRP	met-d-Sphingomyelins	Sphingomyelins || id:met-d-Sphingomyelins	cisCRP	Inverse variance weighted	4	-0.039831473060041	0.014673761797923476	0.006638209174825778	1
+cisCRP	met-d-TG_by_PG	Ratio of triglycerides to phosphoglycerides || id:met-d-TG_by_PG	cisCRP	Inverse variance weighted	4	0.045723515382776074	0.014569183244866262	0.0016988917162791164	0.5912143172651325
+cisCRP	met-d-Total_BCAA	Total concentration of branched-chain amino acids (leucine + isoleucine + valine) || id:met-d-Total_BCAA	cisCRP	Inverse variance weighted	4	0.03811883391703008	0.016159376564907044	0.018327725544597905	1
+cisCRP	met-d-Total_C	Total cholesterol || id:met-d-Total_C	cisCRP	Inverse variance weighted	4	-0.044666603220900485	0.015193526084160103	0.0032837706169001725	1
+cisCRP	met-d-Total_CE	Total esterified cholesterol || id:met-d-Total_CE	cisCRP	Inverse variance weighted	4	-0.04610065188110101	0.015139029495447168	0.0023256243892982925	0.7907122923614195
+cisCRP	met-d-Total_FA	Total fatty acids || id:met-d-Total_FA	cisCRP	Inverse variance weighted	4	9.866239706496282e-4	0.015572207186071753	0.9494814277019236	1
+cisCRP	met-d-Total_FC	Total free cholesterol || id:met-d-Total_FC	cisCRP	Inverse variance weighted	4	-0.04034258897172288	0.015332605649501318	0.008509314274529872	1
+cisCRP	met-d-Total_L	Total lipids in lipoprotein particles || id:met-d-Total_L	cisCRP	Inverse variance weighted	4	-0.02651144964012547	0.01544246999575301	0.08601788517487825	1
+cisCRP	met-d-Total_P	Total concentration of lipoprotein particles || id:met-d-Total_P	cisCRP	Inverse variance weighted	4	-0.03297299721255491	0.014774231822281674	0.02562878123314625	1
+cisCRP	met-d-Total_PL	Total phospholipids in lipoprotein particles || id:met-d-Total_PL	cisCRP	Inverse variance weighted	4	-0.03365412173284696	0.014947153674610157	0.02435132529180895	1
+cisCRP	met-d-Total_TG	Total triglycerides || id:met-d-Total_TG	cisCRP	Inverse variance weighted	4	0.031963840689754525	0.015193842718123015	0.035401443324557136	1
+cisCRP	met-d-Tyr	Tyrosine || id:met-d-Tyr	cisCRP	Inverse variance weighted	4	0.038973107433731315	0.01568856114395747	0.012985253391781868	1
+cisCRP	met-d-Unsaturation	Degree of unsaturation || id:met-d-Unsaturation	cisCRP	Inverse variance weighted	4	-0.021223032849479347	0.014937372951759249	0.15537465062635547	1
+cisCRP	met-d-Val	Valine || id:met-d-Val	cisCRP	Inverse variance weighted	4	0.0328924271610886	0.015277674457413216	0.031320766856867306	1
+cisCRP	met-d-VLDL_C	VLDL cholesterol || id:met-d-VLDL_C	cisCRP	Inverse variance weighted	4	-0.011054187811100936	0.0156730907580734	0.48062527146573286	1
+cisCRP	met-d-VLDL_CE	Cholesteryl esters in VLDL || id:met-d-VLDL_CE	cisCRP	Inverse variance weighted	4	-0.0198747996714865	0.01569959446467212	0.2055333086243162	1
+cisCRP	met-d-VLDL_FC	Free cholesterol in VLDL || id:met-d-VLDL_FC	cisCRP	Inverse variance weighted	4	8.074277958607125e-4	0.015578624112862559	0.9586647798320566	1
+cisCRP	met-d-VLDL_L	Total lipids in VLDL || id:met-d-VLDL_L	cisCRP	Inverse variance weighted	4	0.014834012930755898	0.015389769720164518	0.3351021271837619	1
+cisCRP	met-d-VLDL_P	Concentration of VLDL particles || id:met-d-VLDL_P	cisCRP	Inverse variance weighted	4	-4.536317017409083e-4	0.015609179000663557	0.9768152579856311	1
+cisCRP	met-d-VLDL_PL	Phospholipids in VLDL || id:met-d-VLDL_PL	cisCRP	Inverse variance weighted	4	0.007603046850235263	0.015503841472750005	0.6238525654682248	1
+cisCRP	met-d-VLDL_size	Average diameter for VLDL particles || id:met-d-VLDL_size	cisCRP	Inverse variance weighted	4	0.03847201572395156	0.014632904107168025	0.008560004175857837	1
+cisCRP	met-d-VLDL_TG	Triglycerides in VLDL || id:met-d-VLDL_TG	cisCRP	Inverse variance weighted	4	0.030073739791584533	0.015105201677276015	0.046486104132695674	1
+cisCRP	met-d-XL_HDL_C	Cholesterol in very large HDL || id:met-d-XL_HDL_C	cisCRP	Inverse variance weighted	4	-0.04563278927779176	0.014151051522579122	0.0012610805576826198	0.4489446785350127
+cisCRP	met-d-XL_HDL_C_pct	Cholesterol to total lipids ratio in very large HDL || id:met-d-XL_HDL_C_pct	cisCRP	Inverse variance weighted	4	0.00608119216146587	0.014995329707350045	0.6850813009171685	1
+cisCRP	met-d-XL_HDL_CE	Cholesteryl esters in very large HDL || id:met-d-XL_HDL_CE	cisCRP	Inverse variance weighted	4	-0.04598350099128699	0.014054287470328039	0.001068467708226468	0.38892224579443435
+cisCRP	met-d-XL_HDL_CE_pct	Cholesteryl esters to total lipids ratio in very large HDL || id:met-d-XL_HDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.02783067636935979	0.01800414616652441	0.12215465866136693	1
+cisCRP	met-d-XL_HDL_FC	Free cholesterol in very large HDL || id:met-d-XL_HDL_FC	cisCRP	Inverse variance weighted	4	-0.04339045808016013	0.014620644298501828	0.002999854818632435	0.985746328700668
+cisCRP	met-d-XL_HDL_FC_pct	Free cholesterol to total lipids ratio in very large HDL || id:met-d-XL_HDL_FC_pct	cisCRP	Inverse variance weighted	4	0.03675182778869011	0.013911268910186268	0.008244857946734978	1
+cisCRP	met-d-XL_HDL_L	Total lipids in very large HDL || id:met-d-XL_HDL_L	cisCRP	Inverse variance weighted	4	-0.04340002522741884	0.014103671738439658	0.0020894478457770707	0.7166806111015352
+cisCRP	met-d-XL_HDL_P	Concentration of very large HDL particles || id:met-d-XL_HDL_P	cisCRP	Inverse variance weighted	4	-0.04412508350140449	0.014122720819357384	0.001781657308732386	0.618235086130138
+cisCRP	met-d-XL_HDL_PL	Phospholipids in very large HDL || id:met-d-XL_HDL_PL	cisCRP	Inverse variance weighted	4	-0.04127144867983695	0.014108719630131442	0.003441861383642581	1
+cisCRP	met-d-XL_HDL_PL_pct	Phospholipids to total lipids ratio in very large HDL || id:met-d-XL_HDL_PL_pct	cisCRP	Inverse variance weighted	4	-0.026713470103408257	0.014416807928604789	0.06389105824671347	1
+cisCRP	met-d-XL_HDL_TG	Triglycerides in very large HDL || id:met-d-XL_HDL_TG	cisCRP	Inverse variance weighted	4	0.0070555639898700045	0.015421577793119066	0.647302748662407	1
+cisCRP	met-d-XL_HDL_TG_pct	Triglycerides to total lipids ratio in very large HDL || id:met-d-XL_HDL_TG_pct	cisCRP	Inverse variance weighted	4	0.04468653069546632	0.01479032717985451	0.0025166289748001637	0.8405540775832546
+cisCRP	met-d-XL_VLDL_C	Cholesterol in very large VLDL || id:met-d-XL_VLDL_C	cisCRP	Inverse variance weighted	4	0.0148486651905465	0.015330531674560608	0.3327606850882289	1
+cisCRP	met-d-XL_VLDL_C_pct	Cholesterol to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_C_pct	cisCRP	Inverse variance weighted	4	-0.05266358421669443	0.01504587285139565	4.6490688149780743e-4	0.1822434975471405
+cisCRP	met-d-XL_VLDL_CE	Cholesteryl esters in very large VLDL || id:met-d-XL_VLDL_CE	cisCRP	Inverse variance weighted	4	0.007717101520944129	0.015448847356952176	0.6174088477463895	1
+cisCRP	met-d-XL_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.05224351826723498	0.01505314754089737	5.192886660439109e-4	0.20096471375899352
+cisCRP	met-d-XL_VLDL_FC	Free cholesterol in very large VLDL || id:met-d-XL_VLDL_FC	cisCRP	Inverse variance weighted	4	0.021666518057069536	0.015204175445298755	0.154146401553654	1
+cisCRP	met-d-XL_VLDL_FC_pct	Free cholesterol to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.045090533873664414	0.015216556998500443	0.003044045866049625	0.9954029981982273
+cisCRP	met-d-XL_VLDL_L	Total lipids in very large VLDL || id:met-d-XL_VLDL_L	cisCRP	Inverse variance weighted	4	0.02700647579680092	0.015103362825204294	0.07375824445634759	1
+cisCRP	met-d-XL_VLDL_P	Concentration of very large VLDL particles || id:met-d-XL_VLDL_P	cisCRP	Inverse variance weighted	4	0.030259652155552277	0.015087109381241772	0.04489225007465086	1
+cisCRP	met-d-XL_VLDL_PL	Phospholipids in very large VLDL || id:met-d-XL_VLDL_PL	cisCRP	Inverse variance weighted	4	0.024875329426883946	0.015148239805840926	0.10056374414288803	1
+cisCRP	met-d-XL_VLDL_PL_pct	Phospholipids to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_PL_pct	cisCRP	Inverse variance weighted	4	-0.018002198531849162	0.015724642914601704	0.2522754860429424	1
+cisCRP	met-d-XL_VLDL_TG	Triglycerides in very large VLDL || id:met-d-XL_VLDL_TG	cisCRP	Inverse variance weighted	4	0.03186851049825483	0.015014098550949626	0.03378970369498751	1
+cisCRP	met-d-XL_VLDL_TG_pct	Triglycerides to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_TG_pct	cisCRP	Inverse variance weighted	4	0.05167880903963461	0.015212032795552811	6.807115620363046e-4	0.25458612420157795
+cisCRP	met-d-XS_VLDL_C	Cholesterol in very small VLDL || id:met-d-XS_VLDL_C	cisCRP	Inverse variance weighted	4	-0.04083771213123463	0.015233667537444609	0.0073456537843848806	1
+cisCRP	met-d-XS_VLDL_C_pct	Cholesterol to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_C_pct	cisCRP	Inverse variance weighted	4	-0.06857427930762615	0.014870561120066158	3.999435702974494e-6	0.0018277421162593438
+cisCRP	met-d-XS_VLDL_CE	Cholesteryl esters in very small VLDL || id:met-d-XS_VLDL_CE	cisCRP	Inverse variance weighted	4	-0.045930065903734156	0.015144360021406674	0.0024228282860747044	0.8189159606932501
+cisCRP	met-d-XS_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.06889189310283646	0.014793399726509995	3.2095254801518925e-6	0.0014731721953897188
+cisCRP	met-d-XS_VLDL_FC	Free cholesterol in very small VLDL || id:met-d-XS_VLDL_FC	cisCRP	Inverse variance weighted	4	-0.02630096335811744	0.015422443735230752	0.08812555478019868	1
+cisCRP	met-d-XS_VLDL_FC_pct	Free cholesterol to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.04846699647671226	0.015584980286920562	0.0018718052305816484	0.6457728045506687
+cisCRP	met-d-XS_VLDL_L	Total lipids in very small VLDL || id:met-d-XS_VLDL_L	cisCRP	Inverse variance weighted	4	-0.020981236706039904	0.015427976506140301	0.17384656626561792	1
+cisCRP	met-d-XS_VLDL_P	Concentration of very small VLDL particles || id:met-d-XS_VLDL_P	cisCRP	Inverse variance weighted	4	-0.023412835336124465	0.015486698286194828	0.13058401218429538	1
+cisCRP	met-d-XS_VLDL_PL	Phospholipids in very small VLDL || id:met-d-XS_VLDL_PL	cisCRP	Inverse variance weighted	4	-0.015962154720298372	0.015475796017188724	0.30234059867473745	1
+cisCRP	met-d-XS_VLDL_PL_pct	Phospholipids to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_PL_pct	cisCRP	Inverse variance weighted	4	0.038889942973165156	0.015321525803546676	0.011140670399586295	1
+cisCRP	met-d-XS_VLDL_TG	Triglycerides in very small VLDL || id:met-d-XS_VLDL_TG	cisCRP	Inverse variance weighted	4	0.031308969597091535	0.015455855537391523	0.04279525120091377	1
+cisCRP	met-d-XS_VLDL_TG_pct	Triglycerides to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_TG_pct	cisCRP	Inverse variance weighted	4	0.0705865429195494	0.014906755746648601	2.1883389625884714e-6	0.0010132009396784623
+cisCRP	met-d-XXL_VLDL_C	Cholesterol in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_C	cisCRP	Inverse variance weighted	4	0.023921534044010675	0.015129688252020702	0.11385541728624847	1
+cisCRP	met-d-XXL_VLDL_C_pct	Cholesterol to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_C_pct	cisCRP	Inverse variance weighted	4	-0.020229154914993	0.015747712237018582	0.19894000760822642	1
+cisCRP	met-d-XXL_VLDL_CE	Cholesteryl esters in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_CE	cisCRP	Inverse variance weighted	4	0.0199851608581498	0.015161030348863447	0.18743911931030316	1
+cisCRP	met-d-XXL_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_CE_pct	cisCRP	Inverse variance weighted	4	-0.027060355965972668	0.015833347972242715	0.08743732938359054	1
+cisCRP	met-d-XXL_VLDL_FC	Free cholesterol in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_FC	cisCRP	Inverse variance weighted	4	0.02807953772448158	0.015124355112702333	0.0633712844953699	1
+cisCRP	met-d-XXL_VLDL_FC_pct	Free cholesterol to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_FC_pct	cisCRP	Inverse variance weighted	4	-0.012595906058332178	0.015647069534744096	0.4208191235322511	1
+cisCRP	met-d-XXL_VLDL_L	Total lipids in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_L	cisCRP	Inverse variance weighted	4	0.02260561327052386	0.015122385492255306	0.13495505561634502	1
+cisCRP	met-d-XXL_VLDL_P	Concentration of chylomicrons and extremely large VLDL particles || id:met-d-XXL_VLDL_P	cisCRP	Inverse variance weighted	4	0.02619269624390105	0.015100377755836452	0.082816597941346	1
+cisCRP	met-d-XXL_VLDL_PL	Phospholipids in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_PL	cisCRP	Inverse variance weighted	4	0.02910434614109257	0.015067165585266648	0.053403902598043236	1
+cisCRP	met-d-XXL_VLDL_PL_pct	Phospholipids to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_PL_pct	cisCRP	Inverse variance weighted	4	0.032123192222558244	0.015811725739295266	0.04219358865936618	1
+cisCRP	met-d-XXL_VLDL_TG	Triglycerides in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_TG	cisCRP	Inverse variance weighted	4	0.02142050955427484	0.015152297870046828	0.15745570377434706	1
+cisCRP	met-d-XXL_VLDL_TG_pct	Triglycerides to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_TG_pct	cisCRP	Inverse variance weighted	4	0.007761964622149469	0.015849701498479873	0.6243298681408886	1
+cisIL6R	met-d-Acetate	Acetate || id:met-d-Acetate	cisIL6R	Inverse variance weighted	26	0.07912541122139853	0.026115506363094388	0.002446955649313572	0.8245480833166519
+cisIL6R	met-d-Acetoacetate	Acetoacetate || id:met-d-Acetoacetate	cisIL6R	Inverse variance weighted	26	-0.0186837376267235	0.025924510642715278	0.47109547007204766	1
+cisIL6R	met-d-Acetone	Acetone || id:met-d-Acetone	cisIL6R	Inverse variance weighted	26	0.015273515863857777	0.025950825268371714	0.5561591070490501	1
+cisIL6R	met-d-Ala	Alanine || id:met-d-Ala	cisIL6R	Inverse variance weighted	26	0.09454099901380458	0.027178498794849702	5.041875325122779e-4	0.1961289501472761
+cisIL6R	met-d-Albumin	Albumin || id:met-d-Albumin	cisIL6R	Inverse variance weighted	26	0.2065851007795517	0.04610714744613486	7.445304424393257e-6	0.0033354963821281792
+cisIL6R	met-d-ApoA1	Apolipoprotein A1 || id:met-d-ApoA1	cisIL6R	Inverse variance weighted	26	0.12301475180542273	0.027290152410045006	6.554623469845831e-6	0.0029537582096576913
+cisIL6R	met-d-ApoB	Apolipoprotein B || id:met-d-ApoB	cisIL6R	Inverse variance weighted	26	0.0874982449583368	0.025881647246724163	7.229980787098141e-4	0.26895528528005086
+cisIL6R	met-d-ApoB_by_ApoA1	Ratio of apolipoprotein B to apolipoprotein A1 || id:met-d-ApoB_by_ApoA1	cisIL6R	Inverse variance weighted	26	0.004985203165054646	0.028756629769946754	0.8623697263591881	1
+cisIL6R	met-d-bOHbutyrate	3-Hydroxybutyrate || id:met-d-bOHbutyrate	cisIL6R	Inverse variance weighted	26	-0.08853846257590671	0.02590532116137871	6.313614029191732e-4	0.23739188749760912
+cisIL6R	met-d-Cholines	Total cholines || id:met-d-Cholines	cisIL6R	Inverse variance weighted	26	0.14658941798700628	0.024378109546052705	1.8194384232872537e-9	8.878859505641798e-7
+cisIL6R	met-d-Citrate	Citrate || id:met-d-Citrate	cisIL6R	Inverse variance weighted	26	0.04137581522753319	0.031605080721118554	0.1904832901527712	1
+cisIL6R	met-d-Clinical_LDL_C	Clinical LDL cholesterol || id:met-d-Clinical_LDL_C	cisIL6R	Inverse variance weighted	26	0.11418347668556232	0.025767271599588398	9.365037886959555e-6	0.004186171935470921
+cisIL6R	met-d-Creatinine	Creatinine || id:met-d-Creatinine	cisIL6R	Inverse variance weighted	26	-0.05080926673514722	0.02514956380590858	0.043353915332517715	1
+cisIL6R	met-d-DHA	Docosahexaenoic acid || id:met-d-DHA	cisIL6R	Inverse variance weighted	26	0.10884672858510962	0.029952091279981455	2.7903091440348624e-4	0.11272848941900844
+cisIL6R	met-d-DHA_pct	Ratio of docosahexaenoic acid to total fatty acids || id:met-d-DHA_pct	cisIL6R	Inverse variance weighted	26	0.045479859923675744	0.026527088177686637	0.08644269775402014	1
+cisIL6R	met-d-Gln	Glutamine || id:met-d-Gln	cisIL6R	Inverse variance weighted	26	0.17002883749956535	0.025950057489367045	5.671206563322571e-11	2.8015760422813503e-8
+cisIL6R	met-d-Glucose	Glucose || id:met-d-Glucose	cisIL6R	Inverse variance weighted	26	-0.030745835757316806	0.02924062534750434	0.29303971284448965	1
+cisIL6R	met-d-Gly	Glycine || id:met-d-Gly	cisIL6R	Inverse variance weighted	26	0.017347751478557372	0.02498424677009604	0.4874642541869089	1
+cisIL6R	met-d-GlycA	Glycoprotein acetyls || id:met-d-GlycA	cisIL6R	Inverse variance weighted	26	-0.2073478708729051	0.03131485625160399	3.558371664029545e-11	1.7649523453586543e-8
+cisIL6R	met-d-HDL_C	HDL cholesterol || id:met-d-HDL_C	cisIL6R	Inverse variance weighted	26	0.08394601599512257	0.024535570081615027	6.229947652120573e-4	0.23486902648494562
+cisIL6R	met-d-HDL_CE	Cholesteryl esters in HDL || id:met-d-HDL_CE	cisIL6R	Inverse variance weighted	26	0.083322008881263	0.025090705571207274	8.974966007146648e-4	0.3311762456637113
+cisIL6R	met-d-HDL_FC	Free cholesterol in HDL || id:met-d-HDL_FC	cisIL6R	Inverse variance weighted	26	0.08190633467828566	0.022966679344639723	3.620408852440799e-4	0.14373023144189973
+cisIL6R	met-d-HDL_L	Total lipids in HDL || id:met-d-HDL_L	cisIL6R	Inverse variance weighted	26	0.09572685176914005	0.02479644571677927	1.1315200823291935e-4	0.04684493140842861
+cisIL6R	met-d-HDL_P	Concentration of HDL particles || id:met-d-HDL_P	cisIL6R	Inverse variance weighted	26	0.15144905930723734	0.030819996684276568	8.924272504101378e-7	4.21225662193585e-4
+cisIL6R	met-d-HDL_PL	Phospholipids in HDL || id:met-d-HDL_PL	cisIL6R	Inverse variance weighted	26	0.09250040684082679	0.02501381019520789	2.1732758433844592e-4	0.08845232682574748
+cisIL6R	met-d-HDL_size	Average diameter for HDL particles || id:met-d-HDL_size	cisIL6R	Inverse variance weighted	26	-0.0012453348376139373	0.030013120462177193	0.9669028618119264	1
+cisIL6R	met-d-HDL_TG	Triglycerides in HDL || id:met-d-HDL_TG	cisIL6R	Inverse variance weighted	26	0.065450367350178	0.03144904872459897	0.03741965592635467	1
+cisIL6R	met-d-His	Histidine || id:met-d-His	cisIL6R	Inverse variance weighted	26	0.20866774408338865	0.026021460019020937	1.0655428713553295e-15	5.306403499349541e-13
+cisIL6R	met-d-IDL_C	Cholesterol in IDL || id:met-d-IDL_C	cisIL6R	Inverse variance weighted	26	0.10260820221636588	0.02502632047637697	4.131295757034327e-5	0.017805884712817948
+cisIL6R	met-d-IDL_C_pct	Cholesterol to total lipids ratio in IDL || id:met-d-IDL_C_pct	cisIL6R	Inverse variance weighted	26	0.14654301987614946	0.03534901106260254	3.389183634769912e-5	0.01467516513855372
+cisIL6R	met-d-IDL_CE	Cholesteryl esters in IDL || id:met-d-IDL_CE	cisIL6R	Inverse variance weighted	26	0.1136930425316901	0.02501865211777754	5.510993730563897e-6	0.0025019911536760093
+cisIL6R	met-d-IDL_CE_pct	Cholesteryl esters to total lipids ratio in IDL || id:met-d-IDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.19577760876947822	0.03224704596824403	1.269740572544756e-9	6.209031399743857e-7
+cisIL6R	met-d-IDL_FC	Free cholesterol in IDL || id:met-d-IDL_FC	cisIL6R	Inverse variance weighted	26	0.06947152231870146	0.025847393687444976	0.007193364848145762	1
+cisIL6R	met-d-IDL_FC_pct	Free cholesterol to total lipids ratio in IDL || id:met-d-IDL_FC_pct	cisIL6R	Inverse variance weighted	26	-0.059703263773839305	0.03599079341911608	0.09714637988934746	1
+cisIL6R	met-d-IDL_L	Total lipids in IDL || id:met-d-IDL_L	cisIL6R	Inverse variance weighted	26	0.0915960590878774	0.025055394812689674	2.5643916673881044e-4	0.10385786252921823
+cisIL6R	met-d-IDL_P	Concentration of IDL particles || id:met-d-IDL_P	cisIL6R	Inverse variance weighted	26	0.07405459069276432	0.02648724439156005	0.0051762037688947455	1
+cisIL6R	met-d-IDL_PL	Phospholipids in IDL || id:met-d-IDL_PL	cisIL6R	Inverse variance weighted	26	0.06593953827594325	0.02500351735036774	0.008359094418863549	1
+cisIL6R	met-d-IDL_PL_pct	Phospholipids to total lipids ratio in IDL || id:met-d-IDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.1965979134749163	0.036716457166353085	8.57979265989038e-8	4.1183004767473825e-5
+cisIL6R	met-d-IDL_TG	Triglycerides in IDL || id:met-d-IDL_TG	cisIL6R	Inverse variance weighted	26	-0.02184304019941533	0.027652597393446384	0.4295808168194708	1
+cisIL6R	met-d-IDL_TG_pct	Triglycerides to total lipids ratio in IDL || id:met-d-IDL_TG_pct	cisIL6R	Inverse variance weighted	26	-0.11261256479460821	0.03497439933880565	0.0012825455310300886	0.4553036635156814
+cisIL6R	met-d-Ile	Isoleucine || id:met-d-Ile	cisIL6R	Inverse variance weighted	26	0.03559700649388018	0.0254591555504909	0.16205283751357397	1
+cisIL6R	met-d-L_HDL_C	Cholesterol in large HDL || id:met-d-L_HDL_C	cisIL6R	Inverse variance weighted	26	0.015607678330863078	0.02736747165942657	0.5684740118614058	1
+cisIL6R	met-d-L_HDL_C_pct	Cholesterol to total lipids ratio in large HDL || id:met-d-L_HDL_C_pct	cisIL6R	Inverse variance weighted	26	0.009316436756914332	0.03449801355694793	0.7871162527687097	1
+cisIL6R	met-d-L_HDL_CE	Cholesteryl esters in large HDL || id:met-d-L_HDL_CE	cisIL6R	Inverse variance weighted	26	0.016542486652271052	0.027689918679779883	0.5502275962356187	1
+cisIL6R	met-d-L_HDL_CE_pct	Cholesteryl esters to total lipids ratio in large HDL || id:met-d-L_HDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.01843112374145727	0.03229930073343477	0.5682468306692794	1
+cisIL6R	met-d-L_HDL_FC	Free cholesterol in large HDL || id:met-d-L_HDL_FC	cisIL6R	Inverse variance weighted	26	0.01277890438461854	0.02636449500600101	0.6278882608530917	1
+cisIL6R	met-d-L_HDL_FC_pct	Free cholesterol to total lipids ratio in large HDL || id:met-d-L_HDL_FC_pct	cisIL6R	Inverse variance weighted	26	-0.034134474316309414	0.03853018889319569	0.37566330419880406	1
+cisIL6R	met-d-L_HDL_L	Total lipids in large HDL || id:met-d-L_HDL_L	cisIL6R	Inverse variance weighted	26	0.022349725303899465	0.02597253190038378	0.3895058122514132	1
+cisIL6R	met-d-L_HDL_P	Concentration of large HDL particles || id:met-d-L_HDL_P	cisIL6R	Inverse variance weighted	26	0.03141726376934825	0.026771224964811942	0.24057692452708465	1
+cisIL6R	met-d-L_HDL_PL	Phospholipids in large HDL || id:met-d-L_HDL_PL	cisIL6R	Inverse variance weighted	26	0.021693781039082254	0.024760965530246752	0.38096032454092804	1
+cisIL6R	met-d-L_HDL_PL_pct	Phospholipids to total lipids ratio in large HDL || id:met-d-L_HDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.035403261572997544	0.03857744389069755	0.35876588462765563	1
+cisIL6R	met-d-L_HDL_TG	Triglycerides in large HDL || id:met-d-L_HDL_TG	cisIL6R	Inverse variance weighted	26	0.07511421693676106	0.0320009041312314	0.01891240999951232	1
+cisIL6R	met-d-L_HDL_TG_pct	Triglycerides to total lipids ratio in large HDL || id:met-d-L_HDL_TG_pct	cisIL6R	Inverse variance weighted	26	0.03236609827010071	0.028484060372753188	0.25583601786557614	1
+cisIL6R	met-d-L_LDL_C	Cholesterol in large LDL || id:met-d-L_LDL_C	cisIL6R	Inverse variance weighted	26	0.12665458426486334	0.02562359531226356	7.697336215400746e-7	3.6485373660999533e-4
+cisIL6R	met-d-L_LDL_C_pct	Cholesterol to total lipids ratio in large LDL || id:met-d-L_LDL_C_pct	cisIL6R	Inverse variance weighted	26	0.1568003697379958	0.029649897974977652	1.2339434406715275e-7	5.910589080816617e-5
+cisIL6R	met-d-L_LDL_CE	Cholesteryl esters in large LDL || id:met-d-L_LDL_CE	cisIL6R	Inverse variance weighted	26	0.1276658657832147	0.02568492181539291	6.679438456578069e-7	3.1794127053311606e-4
+cisIL6R	met-d-L_LDL_CE_pct	Cholesteryl esters to total lipids ratio in large LDL || id:met-d-L_LDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.1478133839608451	0.030659464016157965	1.42744436249353e-6	6.68043961646972e-4
+cisIL6R	met-d-L_LDL_FC	Free cholesterol in large LDL || id:met-d-L_LDL_FC	cisIL6R	Inverse variance weighted	26	0.12002437905739517	0.025445324024419503	2.394038193228626e-6	0.0011036516070783964
+cisIL6R	met-d-L_LDL_FC_pct	Free cholesterol to total lipids ratio in large LDL || id:met-d-L_LDL_FC_pct	cisIL6R	Inverse variance weighted	26	0.05770180325112311	0.03333320097685437	0.08344089046758849	1
+cisIL6R	met-d-L_LDL_L	Total lipids in large LDL || id:met-d-L_LDL_L	cisIL6R	Inverse variance weighted	26	0.1215842975900599	0.025663276705070823	2.1618277117440274e-6	0.0010030880582492286
+cisIL6R	met-d-L_LDL_P	Concentration of large LDL particles || id:met-d-L_LDL_P	cisIL6R	Inverse variance weighted	26	0.08421916417171518	0.025823382133226182	0.0011088191750313608	0.40250136053638397
+cisIL6R	met-d-L_LDL_PL	Phospholipids in large LDL || id:met-d-L_LDL_PL	cisIL6R	Inverse variance weighted	26	0.1162255641661174	0.02572286071445307	6.23156630864805e-6	0.0028228995378175663
+cisIL6R	met-d-L_LDL_PL_pct	Phospholipids to total lipids ratio in large LDL || id:met-d-L_LDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.05449629009076735	0.0366355165617316	0.136875893367731	1
+cisIL6R	met-d-L_LDL_TG	Triglycerides in large LDL || id:met-d-L_LDL_TG	cisIL6R	Inverse variance weighted	26	-0.0023769369919095797	0.026513040496182423	0.9285640638875607	1
+cisIL6R	met-d-L_LDL_TG_pct	Triglycerides to total lipids ratio in large LDL || id:met-d-L_LDL_TG_pct	cisIL6R	Inverse variance weighted	26	-0.1338509840176755	0.03355665096404035	6.64065902156976e-5	0.028355614022102876
+cisIL6R	met-d-L_VLDL_C	Cholesterol in large VLDL || id:met-d-L_VLDL_C	cisIL6R	Inverse variance weighted	26	0.07969892633500823	0.025350058364074734	0.0016669267267260207	0.5850912810808333
+cisIL6R	met-d-L_VLDL_C_pct	Cholesterol to total lipids ratio in large VLDL || id:met-d-L_VLDL_C_pct	cisIL6R	Inverse variance weighted	26	-0.06625666465890474	0.026894280163894654	0.013755071754065422	1
+cisIL6R	met-d-L_VLDL_CE	Cholesteryl esters in large VLDL || id:met-d-L_VLDL_CE	cisIL6R	Inverse variance weighted	26	0.07758561673189225	0.025607058806389933	0.0024467302175568304	0.8245480833166519
+cisIL6R	met-d-L_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in large VLDL || id:met-d-L_VLDL_CE_pct	cisIL6R	Inverse variance weighted	26	-0.042683647222313374	0.027495449831472542	0.12056905773506785	1
+cisIL6R	met-d-L_VLDL_FC	Free cholesterol in large VLDL || id:met-d-L_VLDL_FC	cisIL6R	Inverse variance weighted	26	0.07878353539484077	0.02507081638389363	0.0016754606737825273	0.5864112358238845
+cisIL6R	met-d-L_VLDL_FC_pct	Free cholesterol to total lipids ratio in large VLDL || id:met-d-L_VLDL_FC_pct	cisIL6R	Inverse variance weighted	26	-0.09668907444594135	0.02568733759359488	1.6716647115379854e-4	0.0687054196442112
+cisIL6R	met-d-L_VLDL_L	Total lipids in large VLDL || id:met-d-L_VLDL_L	cisIL6R	Inverse variance weighted	26	0.09027004354098195	0.025048277491504848	3.1354726609438596e-4	0.12573245370384878
+cisIL6R	met-d-L_VLDL_P	Concentration of large VLDL particles || id:met-d-L_VLDL_P	cisIL6R	Inverse variance weighted	26	0.08206284013696244	0.02502657910643702	0.0010416549914490153	0.38020407187889055
+cisIL6R	met-d-L_VLDL_PL	Phospholipids in large VLDL || id:met-d-L_VLDL_PL	cisIL6R	Inverse variance weighted	26	0.07479925030626623	0.025007910746548262	0.002780440377445399	0.9175453245569817
+cisIL6R	met-d-L_VLDL_PL_pct	Phospholipids to total lipids ratio in large VLDL || id:met-d-L_VLDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.0686515859467683	0.025966432005321338	0.008196678357769983	1
+cisIL6R	met-d-L_VLDL_TG	Triglycerides in large VLDL || id:met-d-L_VLDL_TG	cisIL6R	Inverse variance weighted	26	0.10100490667873739	0.025395804181957186	6.972326866121897e-5	0.029702112449679283
+cisIL6R	met-d-L_VLDL_TG_pct	Triglycerides to total lipids ratio in large VLDL || id:met-d-L_VLDL_TG_pct	cisIL6R	Inverse variance weighted	26	0.09428253848551725	0.026772184423293464	4.2885333240777116e-4	0.16853935963625408
+cisIL6R	met-d-LA	Linoleic acid || id:met-d-LA	cisIL6R	Inverse variance weighted	26	0.16665953197721767	0.0254248166638318	5.56439482754791e-11	2.7543754396362155e-8
+cisIL6R	met-d-LA_pct	Ratio of linoleic acid to total fatty acids || id:met-d-LA_pct	cisIL6R	Inverse variance weighted	26	0.11430923167368572	0.02642649746879696	1.5214925467870887e-5	0.006755426907734674
+cisIL6R	met-d-Lactate	Lactate || id:met-d-Lactate	cisIL6R	Inverse variance weighted	26	0.051510548657627754	0.02596780179336637	0.047296939097809985	1
+cisIL6R	met-d-LDL_C	LDL cholesterol || id:met-d-LDL_C	cisIL6R	Inverse variance weighted	26	0.12784658666388754	0.025805017453119854	7.257972876810939e-7	3.447537116485196e-4
+cisIL6R	met-d-LDL_CE	Cholesteryl esters in LDL || id:met-d-LDL_CE	cisIL6R	Inverse variance weighted	26	0.12898231055706302	0.02584973324017075	6.047438684089469e-7	2.8846282523106763e-4
+cisIL6R	met-d-LDL_FC	Free cholesterol in LDL || id:met-d-LDL_FC	cisIL6R	Inverse variance weighted	26	0.11948314583310432	0.02563768507886174	3.155190175698304e-6	0.0014513874808212198
+cisIL6R	met-d-LDL_L	Total lipids in LDL || id:met-d-LDL_L	cisIL6R	Inverse variance weighted	26	0.12306095455258184	0.025830438649960704	1.896197089391301e-6	8.817316465669549e-4
+cisIL6R	met-d-LDL_P	Concentration of LDL particles || id:met-d-LDL_P	cisIL6R	Inverse variance weighted	26	0.08933154613068114	0.025895686069432634	5.612742351975148e-4	0.21328420937505563
+cisIL6R	met-d-LDL_PL	Phospholipids in LDL || id:met-d-LDL_PL	cisIL6R	Inverse variance weighted	26	0.11656135543798044	0.025857522263568074	6.549353014762065e-6	0.0029537582096576913
+cisIL6R	met-d-LDL_size	Average diameter for LDL particles || id:met-d-LDL_size	cisIL6R	Inverse variance weighted	26	-0.013530232170803617	0.03048986658298887	0.6572149493841088	1
+cisIL6R	met-d-LDL_TG	Triglycerides in LDL || id:met-d-LDL_TG	cisIL6R	Inverse variance weighted	26	0.012199027201251659	0.027266039194485964	0.6545809471175086	1
+cisIL6R	met-d-Leu	Leucine || id:met-d-Leu	cisIL6R	Inverse variance weighted	26	0.06489037394740929	0.024874104692115866	0.009087303606099058	1
+cisIL6R	met-d-M_HDL_C	Cholesterol in medium HDL || id:met-d-M_HDL_C	cisIL6R	Inverse variance weighted	26	0.10046003162270513	0.02808628096891424	3.4777770064397975e-4	0.138420818524445
+cisIL6R	met-d-M_HDL_C_pct	Cholesterol to total lipids ratio in medium HDL || id:met-d-M_HDL_C_pct	cisIL6R	Inverse variance weighted	26	0.03910678048189853	0.02797660026261678	0.16216144629026283	1
+cisIL6R	met-d-M_HDL_CE	Cholesteryl esters in medium HDL || id:met-d-M_HDL_CE	cisIL6R	Inverse variance weighted	26	0.09923505952402849	0.028534111821581422	5.05604784941842e-4	0.19617465655743468
+cisIL6R	met-d-M_HDL_CE_pct	Cholesteryl esters to total lipids ratio in medium HDL || id:met-d-M_HDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.02569390969081017	0.028468419245048497	0.3667696616751709	1
+cisIL6R	met-d-M_HDL_FC	Free cholesterol in medium HDL || id:met-d-M_HDL_FC	cisIL6R	Inverse variance weighted	26	0.10313158509939878	0.026255121866732272	8.563532591801854e-5	0.036138107537403825
+cisIL6R	met-d-M_HDL_FC_pct	Free cholesterol to total lipids ratio in medium HDL || id:met-d-M_HDL_FC_pct	cisIL6R	Inverse variance weighted	26	0.07567964042294285	0.023212325805554507	0.0011128606602591265	0.40285555901380377
+cisIL6R	met-d-M_HDL_L	Total lipids in medium HDL || id:met-d-M_HDL_L	cisIL6R	Inverse variance weighted	26	0.10716743037696315	0.029111448405711168	2.320648055383439e-4	0.09421831104856762
+cisIL6R	met-d-M_HDL_P	Concentration of medium HDL particles || id:met-d-M_HDL_P	cisIL6R	Inverse variance weighted	26	0.11233697198362662	0.028283932613690468	7.134379166395347e-5	0.030321111457180222
+cisIL6R	met-d-M_HDL_PL	Phospholipids in medium HDL || id:met-d-M_HDL_PL	cisIL6R	Inverse variance weighted	26	0.10162600446201067	0.029390856374288104	5.447223587208777e-4	0.20808394103137529
+cisIL6R	met-d-M_HDL_PL_pct	Phospholipids to total lipids ratio in medium HDL || id:met-d-M_HDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.0998167814937958	0.0282716500968273	4.145687099887853e-4	0.1637546404455702
+cisIL6R	met-d-M_HDL_TG	Triglycerides in medium HDL || id:met-d-M_HDL_TG	cisIL6R	Inverse variance weighted	26	0.06489116274755824	0.030710737455074785	0.03460251117551531	1
+cisIL6R	met-d-M_HDL_TG_pct	Triglycerides to total lipids ratio in medium HDL || id:met-d-M_HDL_TG_pct	cisIL6R	Inverse variance weighted	26	0.004919219213143173	0.028292564203669376	0.8619678779333043	1
+cisIL6R	met-d-M_LDL_C	Cholesterol in medium LDL || id:met-d-M_LDL_C	cisIL6R	Inverse variance weighted	26	0.12666500549646215	0.025968471501494846	1.0735949644776242e-6	5.045896333044833e-4
+cisIL6R	met-d-M_LDL_C_pct	Cholesterol to total lipids ratio in medium LDL || id:met-d-M_LDL_C_pct	cisIL6R	Inverse variance weighted	26	0.1076077578677377	0.03230248334959379	8.645585918814145e-4	0.3198866789961234
+cisIL6R	met-d-M_LDL_CE	Cholesteryl esters in medium LDL || id:met-d-M_LDL_CE	cisIL6R	Inverse variance weighted	26	0.1243828159098051	0.025956757213436637	1.6518922580147448e-6	7.697817922348711e-4
+cisIL6R	met-d-M_LDL_CE_pct	Cholesteryl esters to total lipids ratio in medium LDL || id:met-d-M_LDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.07044122919001133	0.02678670021654502	0.008545796043126738	1
+cisIL6R	met-d-M_LDL_FC	Free cholesterol in medium LDL || id:met-d-M_LDL_FC	cisIL6R	Inverse variance weighted	26	0.12249523534620822	0.02588556167349096	2.2211715656363895e-6	0.001026181263324012
+cisIL6R	met-d-M_LDL_FC_pct	Free cholesterol to total lipids ratio in medium LDL || id:met-d-M_LDL_FC_pct	cisIL6R	Inverse variance weighted	26	0.014507874868257005	0.02940257493602628	0.6217144998600498	1
+cisIL6R	met-d-M_LDL_L	Total lipids in medium LDL || id:met-d-M_LDL_L	cisIL6R	Inverse variance weighted	26	0.12534804092649016	0.025956344717494674	1.3709166119507073e-6	6.429598910048818e-4
+cisIL6R	met-d-M_LDL_P	Concentration of medium LDL particles || id:met-d-M_LDL_P	cisIL6R	Inverse variance weighted	26	0.09067740833847894	0.025996843956477684	4.8661891130290875e-4	0.18978137540813442
+cisIL6R	met-d-M_LDL_PL	Phospholipids in medium LDL || id:met-d-M_LDL_PL	cisIL6R	Inverse variance weighted	26	0.12757357262008207	0.025955339757401486	8.87287390410944e-7	4.196869356643765e-4
+cisIL6R	met-d-M_LDL_PL_pct	Phospholipids to total lipids ratio in medium LDL || id:met-d-M_LDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.011919738420740605	0.025918449150183508	0.6455923301599261	1
+cisIL6R	met-d-M_LDL_TG	Triglycerides in medium LDL || id:met-d-M_LDL_TG	cisIL6R	Inverse variance weighted	26	0.028895099532289	0.02830531113171403	0.30733182812662285	1
+cisIL6R	met-d-M_LDL_TG_pct	Triglycerides to total lipids ratio in medium LDL || id:met-d-M_LDL_TG_pct	cisIL6R	Inverse variance weighted	26	-0.11439782004220315	0.036431812342394794	0.0016891729707797878	0.589521366802146
+cisIL6R	met-d-M_VLDL_C	Cholesterol in medium VLDL || id:met-d-M_VLDL_C	cisIL6R	Inverse variance weighted	26	0.07738731051964037	0.02584469521733053	0.0027505650484751978	0.9104370310452905
+cisIL6R	met-d-M_VLDL_C_pct	Cholesterol to total lipids ratio in medium VLDL || id:met-d-M_VLDL_C_pct	cisIL6R	Inverse variance weighted	26	-0.02065481043817286	0.0324920563391598	0.5249797967941257	1
+cisIL6R	met-d-M_VLDL_CE	Cholesteryl esters in medium VLDL || id:met-d-M_VLDL_CE	cisIL6R	Inverse variance weighted	26	0.05916133506025805	0.02728354465238507	0.03012911041160331	1
+cisIL6R	met-d-M_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in medium VLDL || id:met-d-M_VLDL_CE_pct	cisIL6R	Inverse variance weighted	26	-0.020281712438773407	0.03225791104693773	0.5295218552243424	1
+cisIL6R	met-d-M_VLDL_FC	Free cholesterol in medium VLDL || id:met-d-M_VLDL_FC	cisIL6R	Inverse variance weighted	26	0.09142935587116402	0.025912459026347957	4.18089908803024e-4	0.16472742406839147
+cisIL6R	met-d-M_VLDL_FC_pct	Free cholesterol to total lipids ratio in medium VLDL || id:met-d-M_VLDL_FC_pct	cisIL6R	Inverse variance weighted	26	-0.02504161711936041	0.03271766912826797	0.4440422507704422	1
+cisIL6R	met-d-M_VLDL_L	Total lipids in medium VLDL || id:met-d-M_VLDL_L	cisIL6R	Inverse variance weighted	26	0.11211933254094812	0.025739323612137002	1.3248806228609628e-5	0.005908967577959894
+cisIL6R	met-d-M_VLDL_P	Concentration of medium VLDL particles || id:met-d-M_VLDL_P	cisIL6R	Inverse variance weighted	26	0.10345553181269229	0.02585251738328942	6.287344806035312e-5	0.026909835769831136
+cisIL6R	met-d-M_VLDL_PL	Phospholipids in medium VLDL || id:met-d-M_VLDL_PL	cisIL6R	Inverse variance weighted	26	0.10013406223100892	0.025875985886945924	1.0893896881252304e-4	0.04553635322708331
+cisIL6R	met-d-M_VLDL_PL_pct	Phospholipids to total lipids ratio in medium VLDL || id:met-d-M_VLDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.01477481714504337	0.03130555929647563	0.6369588654509617	1
+cisIL6R	met-d-M_VLDL_TG	Triglycerides in medium VLDL || id:met-d-M_VLDL_TG	cisIL6R	Inverse variance weighted	26	0.11034309650054697	0.025851030707562592	1.9686103892232464e-5	0.00862251350479782
+cisIL6R	met-d-M_VLDL_TG_pct	Triglycerides to total lipids ratio in medium VLDL || id:met-d-M_VLDL_TG_pct	cisIL6R	Inverse variance weighted	26	0.01897068694126788	0.032476943723467766	0.5591343064924615	1
+cisIL6R	met-d-MUFA	Monounsaturated fatty acids || id:met-d-MUFA	cisIL6R	Inverse variance weighted	26	0.062188262367567824	0.02730428568363426	0.022750373997567935	1
+cisIL6R	met-d-MUFA_pct	Ratio of monounsaturated fatty acids to total fatty acids || id:met-d-MUFA_pct	cisIL6R	Inverse variance weighted	26	-0.035958600304533614	0.02518711526991106	0.1533901640572368	1
+cisIL6R	met-d-non_HDL_C	Total cholesterol minus HDL-C || id:met-d-non_HDL_C	cisIL6R	Inverse variance weighted	26	0.11560029396428788	0.025777065822141974	7.304466719148101e-6	0.0032797055568974977
+cisIL6R	met-d-Omega_3	Omega-3 fatty acids || id:met-d-Omega_3	cisIL6R	Inverse variance weighted	26	0.10370930516675624	0.030599748104634814	7.009152642752907e-4	0.26144139357468343
+cisIL6R	met-d-Omega_3_pct	Ratio of omega-3 fatty acids to total fatty acids || id:met-d-Omega_3_pct	cisIL6R	Inverse variance weighted	26	0.062921361478865	0.026958279871868076	0.019594291899542295	1
+cisIL6R	met-d-Omega_6	Omega-6 fatty acids || id:met-d-Omega_6	cisIL6R	Inverse variance weighted	26	0.14597896141777236	0.02531466498758289	8.089782303398222e-9	3.931634199451536e-6
+cisIL6R	met-d-Omega_6_by_Omega_3	Ratio of omega-6 fatty acids to omega-3 fatty acids || id:met-d-Omega_6_by_Omega_3	cisIL6R	Inverse variance weighted	26	-0.056794484178876226	0.02798050931457424	0.04237815817328269	1
+cisIL6R	met-d-Omega_6_pct	Ratio of omega-6 fatty acids to total fatty acids || id:met-d-Omega_6_pct	cisIL6R	Inverse variance weighted	26	0.027882155445936776	0.025896951309803774	0.28163315757026897	1
+cisIL6R	met-d-Phe	Phenylalanine || id:met-d-Phe	cisIL6R	Inverse variance weighted	26	-0.010819581533096269	0.025948750170128532	0.676707928901936	1
+cisIL6R	met-d-Phosphatidylc	Phosphatidylcholines || id:met-d-Phosphatidylc	cisIL6R	Inverse variance weighted	26	0.15716541014436486	0.024285244725301854	9.694358184373207e-11	4.779318584895991e-8
+cisIL6R	met-d-Phosphoglyc	Phosphoglycerides || id:met-d-Phosphoglyc	cisIL6R	Inverse variance weighted	26	0.1425645204225578	0.02469228587634006	7.757427499475308e-9	3.777867192244475e-6
+cisIL6R	met-d-PUFA	Polyunsaturated fatty acids || id:met-d-PUFA	cisIL6R	Inverse variance weighted	26	0.14828901515072762	0.026960636976385125	3.793511470016861e-8	1.8322660400181438e-5
+cisIL6R	met-d-PUFA_by_MUFA	Ratio of polyunsaturated fatty acids to monounsaturated fatty acids || id:met-d-PUFA_by_MUFA	cisIL6R	Inverse variance weighted	26	0.03602221242140918	0.02559458196159422	0.1593042054873302	1
+cisIL6R	met-d-PUFA_pct	Ratio of polyunsaturated fatty acids to total fatty acids || id:met-d-PUFA_pct	cisIL6R	Inverse variance weighted	26	0.035910526179065934	0.024950261752102333	0.15006991931918615	1
+cisIL6R	met-d-Pyruvate	Pyruvate || id:met-d-Pyruvate	cisIL6R	Inverse variance weighted	26	-0.1274175973315463	0.02754418578509924	3.7291327342535665e-6	0.0017079427922881334
+cisIL6R	met-d-Remnant_C	Remnant cholesterol (non-HDL, non-LDL -cholesterol) || id:met-d-Remnant_C	cisIL6R	Inverse variance weighted	26	0.09944573054536443	0.025751297190780856	1.1256594655694982e-4	0.046714867821134175
+cisIL6R	met-d-S_HDL_C	Cholesterol in small HDL || id:met-d-S_HDL_C	cisIL6R	Inverse variance weighted	26	0.16649272884983918	0.04068703891581516	4.2760674115165873e-5	0.018387089869521325
+cisIL6R	met-d-S_HDL_C_pct	Cholesterol to total lipids ratio in small HDL || id:met-d-S_HDL_C_pct	cisIL6R	Inverse variance weighted	26	0.018871964497361917	0.03020521632190925	0.5321078648531892	1
+cisIL6R	met-d-S_HDL_CE	Cholesteryl esters in small HDL || id:met-d-S_HDL_CE	cisIL6R	Inverse variance weighted	26	0.16109688618622597	0.04165675968204912	1.1007193164638819e-4	0.045789923564897486
+cisIL6R	met-d-S_HDL_CE_pct	Cholesteryl esters to total lipids ratio in small HDL || id:met-d-S_HDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.01612619444252885	0.032367161385831615	0.6183240381494415	1
+cisIL6R	met-d-S_HDL_FC	Free cholesterol in small HDL || id:met-d-S_HDL_FC	cisIL6R	Inverse variance weighted	26	0.16004218490259328	0.03509595439863079	5.1121474770924646e-6	0.0023260271020770712
+cisIL6R	met-d-S_HDL_FC_pct	Free cholesterol to total lipids ratio in small HDL || id:met-d-S_HDL_FC_pct	cisIL6R	Inverse variance weighted	26	0.015439199506082989	0.030694640101067577	0.6149689555071975	1
+cisIL6R	met-d-S_HDL_L	Total lipids in small HDL || id:met-d-S_HDL_L	cisIL6R	Inverse variance weighted	26	0.15885363540087746	0.04066202803888536	9.357195631412875e-5	0.03930022165193407
+cisIL6R	met-d-S_HDL_P	Concentration of small HDL particles || id:met-d-S_HDL_P	cisIL6R	Inverse variance weighted	26	0.17117310651330078	0.04090255951359954	2.8529211957235184e-5	0.01243873641335454
+cisIL6R	met-d-S_HDL_PL	Phospholipids in small HDL || id:met-d-S_HDL_PL	cisIL6R	Inverse variance weighted	26	0.15254336240011993	0.03941924519366152	1.0893864408393136e-4	0.04553635322708331
+cisIL6R	met-d-S_HDL_PL_pct	Phospholipids to total lipids ratio in small HDL || id:met-d-S_HDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.008359190981073062	0.02505447186659472	0.7386507187875813	1
+cisIL6R	met-d-S_HDL_TG	Triglycerides in small HDL || id:met-d-S_HDL_TG	cisIL6R	Inverse variance weighted	26	0.04434526721027473	0.030167289841517928	0.14156757938656533	1
+cisIL6R	met-d-S_HDL_TG_pct	Triglycerides to total lipids ratio in small HDL || id:met-d-S_HDL_TG_pct	cisIL6R	Inverse variance weighted	26	-0.020249392290172297	0.027793618583459367	0.46626923511113877	1
+cisIL6R	met-d-S_LDL_C	Cholesterol in small LDL || id:met-d-S_LDL_C	cisIL6R	Inverse variance weighted	26	0.11917192300664924	0.025942631273510666	4.355150142359545e-6	0.0019859484649159525
+cisIL6R	met-d-S_LDL_C_pct	Cholesterol to total lipids ratio in small LDL || id:met-d-S_LDL_C_pct	cisIL6R	Inverse variance weighted	26	0.1734727507290448	0.027850324295926297	4.701666941132645e-10	2.3085184680961284e-7
+cisIL6R	met-d-S_LDL_CE	Cholesteryl esters in small LDL || id:met-d-S_LDL_CE	cisIL6R	Inverse variance weighted	26	0.12450775151096871	0.02593150110932511	1.5755283899789058e-6	7.35771758120149e-4
+cisIL6R	met-d-S_LDL_CE_pct	Cholesteryl esters to total lipids ratio in small LDL || id:met-d-S_LDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.160347097496753	0.025876609422605914	5.769446910139212e-10	2.8270289859682136e-7
+cisIL6R	met-d-S_LDL_FC	Free cholesterol in small LDL || id:met-d-S_LDL_FC	cisIL6R	Inverse variance weighted	26	0.09317294120608476	0.027065403229175986	5.763409863124619e-4	0.21843323381242305
+cisIL6R	met-d-S_LDL_FC_pct	Free cholesterol to total lipids ratio in small LDL || id:met-d-S_LDL_FC_pct	cisIL6R	Inverse variance weighted	26	0.014971074657192237	0.029274989534612453	0.6090747013838108	1
+cisIL6R	met-d-S_LDL_L	Total lipids in small LDL || id:met-d-S_LDL_L	cisIL6R	Inverse variance weighted	26	0.10758377169974527	0.02590948342907742	3.2916017025168725e-5	0.014285551388923226
+cisIL6R	met-d-S_LDL_P	Concentration of small LDL particles || id:met-d-S_LDL_P	cisIL6R	Inverse variance weighted	26	0.09280509634759873	0.025941453110598794	3.4691934467279443e-4	0.138420818524445
+cisIL6R	met-d-S_LDL_PL	Phospholipids in small LDL || id:met-d-S_LDL_PL	cisIL6R	Inverse variance weighted	26	0.07474370884568071	0.026647899406889452	0.005033796003965045	1
+cisIL6R	met-d-S_LDL_PL_pct	Phospholipids to total lipids ratio in small LDL || id:met-d-S_LDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.17816577113779045	0.02587265464953267	5.727913032392865e-12	2.846772777099254e-9
+cisIL6R	met-d-S_LDL_TG	Triglycerides in small LDL || id:met-d-S_LDL_TG	cisIL6R	Inverse variance weighted	26	0.046422494159500435	0.027569681201540564	0.09221566452194743	1
+cisIL6R	met-d-S_LDL_TG_pct	Triglycerides to total lipids ratio in small LDL || id:met-d-S_LDL_TG_pct	cisIL6R	Inverse variance weighted	26	-0.03868933733770904	0.03414412943572455	0.25716458429387434	1
+cisIL6R	met-d-S_VLDL_C	Cholesterol in small VLDL || id:met-d-S_VLDL_C	cisIL6R	Inverse variance weighted	26	0.05432753664871398	0.025912363369618687	0.03603010843450319	1
+cisIL6R	met-d-S_VLDL_C_pct	Cholesterol to total lipids ratio in small VLDL || id:met-d-S_VLDL_C_pct	cisIL6R	Inverse variance weighted	26	-0.0075172437613088595	0.03841196794948949	0.8448445435654779	1
+cisIL6R	met-d-S_VLDL_CE	Cholesteryl esters in small VLDL || id:met-d-S_VLDL_CE	cisIL6R	Inverse variance weighted	26	0.04142954980887532	0.025881335039290628	0.10943227845329621	1
+cisIL6R	met-d-S_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in small VLDL || id:met-d-S_VLDL_CE_pct	cisIL6R	Inverse variance weighted	26	-0.04999317640069331	0.039224233073923274	0.2024691953054332	1
+cisIL6R	met-d-S_VLDL_FC	Free cholesterol in small VLDL || id:met-d-S_VLDL_FC	cisIL6R	Inverse variance weighted	26	0.07518528151759783	0.025920830275162985	0.00372480099614673	1
+cisIL6R	met-d-S_VLDL_FC_pct	Free cholesterol to total lipids ratio in small VLDL || id:met-d-S_VLDL_FC_pct	cisIL6R	Inverse variance weighted	26	0.0451015214001419	0.03566757482670844	0.2060518976012602	1
+cisIL6R	met-d-S_VLDL_L	Total lipids in small VLDL || id:met-d-S_VLDL_L	cisIL6R	Inverse variance weighted	26	0.06623514607210351	0.025659141469080375	0.009841562430452236	1
+cisIL6R	met-d-S_VLDL_P	Concentration of small VLDL particles || id:met-d-S_VLDL_P	cisIL6R	Inverse variance weighted	26	0.06236023320801996	0.025583942892612888	0.014790217689683407	1
+cisIL6R	met-d-S_VLDL_PL	Phospholipids in small VLDL || id:met-d-S_VLDL_PL	cisIL6R	Inverse variance weighted	26	0.07254594359592122	0.025865265230637948	0.005035356089576892	1
+cisIL6R	met-d-S_VLDL_PL_pct	Phospholipids to total lipids ratio in small VLDL || id:met-d-S_VLDL_PL_pct	cisIL6R	Inverse variance weighted	26	0.03775194928075207	0.035905860757761025	0.2930681741397516	1
+cisIL6R	met-d-S_VLDL_TG	Triglycerides in small VLDL || id:met-d-S_VLDL_TG	cisIL6R	Inverse variance weighted	26	0.05555535008281013	0.030901134132215236	0.07220208391284852	1
+cisIL6R	met-d-S_VLDL_TG_pct	Triglycerides to total lipids ratio in small VLDL || id:met-d-S_VLDL_TG_pct	cisIL6R	Inverse variance weighted	26	-0.006824952081564962	0.0377520190804244	0.8565373081200531	1
+cisIL6R	met-d-SFA	Saturated fatty acids || id:met-d-SFA	cisIL6R	Inverse variance weighted	26	0.0914526391497011	0.025705621589919132	3.741301252634385e-4	0.14815552960432163
+cisIL6R	met-d-SFA_pct	Ratio of saturated fatty acids to total fatty acids || id:met-d-SFA_pct	cisIL6R	Inverse variance weighted	26	-0.013422662773351798	0.025589546579324763	0.5999051253204946	1
+cisIL6R	met-d-Sphingomyelins	Sphingomyelins || id:met-d-Sphingomyelins	cisIL6R	Inverse variance weighted	26	0.07124438830319271	0.024231104005513458	0.003279962478016068	1
+cisIL6R	met-d-TG_by_PG	Ratio of triglycerides to phosphoglycerides || id:met-d-TG_by_PG	cisIL6R	Inverse variance weighted	26	0.013192436699735818	0.024667114901801915	0.5927751642539199	1
+cisIL6R	met-d-Total_BCAA	Total concentration of branched-chain amino acids (leucine + isoleucine + valine) || id:met-d-Total_BCAA	cisIL6R	Inverse variance weighted	26	0.053866153794215284	0.025085896774188477	0.031771918867111545	1
+cisIL6R	met-d-Total_C	Total cholesterol || id:met-d-Total_C	cisIL6R	Inverse variance weighted	26	0.1326452104999124	0.025088625259652095	1.2429399570862869e-7	5.941252994872451e-5
+cisIL6R	met-d-Total_CE	Total esterified cholesterol || id:met-d-Total_CE	cisIL6R	Inverse variance weighted	26	0.13521494590390987	0.02499863428295364	6.341538915272601e-8	3.0502802182461208e-5
+cisIL6R	met-d-Total_FA	Total fatty acids || id:met-d-Total_FA	cisIL6R	Inverse variance weighted	26	0.10805579346898614	0.02741618903043929	8.103666032155048e-5	0.034315416420111364
+cisIL6R	met-d-Total_FC	Total free cholesterol || id:met-d-Total_FC	cisIL6R	Inverse variance weighted	26	0.12436258889119638	0.025318268741270963	9.01656261874893e-7	4.246800993430746e-4
+cisIL6R	met-d-Total_L	Total lipids in lipoprotein particles || id:met-d-Total_L	cisIL6R	Inverse variance weighted	26	0.14452433210555765	0.025499710097448648	1.447394883729461e-8	7.0198651860878865e-6
+cisIL6R	met-d-Total_P	Total concentration of lipoprotein particles || id:met-d-Total_P	cisIL6R	Inverse variance weighted	26	0.15842557628781292	0.02922862472019766	5.9525736075869345e-8	2.8691404788569024e-5
+cisIL6R	met-d-Total_PL	Total phospholipids in lipoprotein particles || id:met-d-Total_PL	cisIL6R	Inverse variance weighted	26	0.13646232864681115	0.024681788880701154	3.223055276771017e-8	1.5599587539571724e-5
+cisIL6R	met-d-Total_TG	Total triglycerides || id:met-d-Total_TG	cisIL6R	Inverse variance weighted	26	0.06970320997239232	0.026582576030862788	0.008737977857994168	1
+cisIL6R	met-d-Tyr	Tyrosine || id:met-d-Tyr	cisIL6R	Inverse variance weighted	26	-0.017049917663602258	0.025906000839037532	0.5104446463669806	1
+cisIL6R	met-d-Unsaturation	Degree of unsaturation || id:met-d-Unsaturation	cisIL6R	Inverse variance weighted	26	0.039349032872704755	0.024857647231919414	0.11342717414410111	1
+cisIL6R	met-d-Val	Valine || id:met-d-Val	cisIL6R	Inverse variance weighted	26	0.0491420785492835	0.02605895468069545	0.059321384258211686	1
+cisIL6R	met-d-VLDL_C	VLDL cholesterol || id:met-d-VLDL_C	cisIL6R	Inverse variance weighted	26	0.07460399689263501	0.025880526066623406	0.003943695927519186	1
+cisIL6R	met-d-VLDL_CE	Cholesteryl esters in VLDL || id:met-d-VLDL_CE	cisIL6R	Inverse variance weighted	26	0.07022017433209067	0.025924271273244485	0.006755444851916248	1
+cisIL6R	met-d-VLDL_FC	Free cholesterol in VLDL || id:met-d-VLDL_FC	cisIL6R	Inverse variance weighted	26	0.07780694224747	0.025724524988144603	0.002489447492124003	0.833964909861541
+cisIL6R	met-d-VLDL_L	Total lipids in VLDL || id:met-d-VLDL_L	cisIL6R	Inverse variance weighted	26	0.08156373570663579	0.02541265485471106	0.0013293292667474828	0.4705825604286089
+cisIL6R	met-d-VLDL_P	Concentration of VLDL particles || id:met-d-VLDL_P	cisIL6R	Inverse variance weighted	26	0.06746030375904037	0.02577496573731453	0.008863358823656053	1
+cisIL6R	met-d-VLDL_PL	Phospholipids in VLDL || id:met-d-VLDL_PL	cisIL6R	Inverse variance weighted	26	0.07292661635509937	0.02560100904031392	0.004391430423323567	1
+cisIL6R	met-d-VLDL_size	Average diameter for VLDL particles || id:met-d-VLDL_size	cisIL6R	Inverse variance weighted	26	0.09801808093944034	0.02618529580164324	1.8165609259843788e-4	0.07447899796535953
+cisIL6R	met-d-VLDL_TG	Triglycerides in VLDL || id:met-d-VLDL_TG	cisIL6R	Inverse variance weighted	26	0.07563149900630385	0.025978902209517405	0.0035996723248462145	1
+cisIL6R	met-d-XL_HDL_C	Cholesterol in very large HDL || id:met-d-XL_HDL_C	cisIL6R	Inverse variance weighted	26	-0.013268824832885256	0.032878537316722495	0.6865282000778692	1
+cisIL6R	met-d-XL_HDL_C_pct	Cholesterol to total lipids ratio in very large HDL || id:met-d-XL_HDL_C_pct	cisIL6R	Inverse variance weighted	26	0.023515591311171848	0.03456434652193752	0.49628766786776585	1
+cisIL6R	met-d-XL_HDL_CE	Cholesteryl esters in very large HDL || id:met-d-XL_HDL_CE	cisIL6R	Inverse variance weighted	26	-0.005962169926458843	0.03155211992115901	0.8501221466582887	1
+cisIL6R	met-d-XL_HDL_CE_pct	Cholesteryl esters to total lipids ratio in very large HDL || id:met-d-XL_HDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.09794982232885097	0.0334582825366827	0.0034167606554305124	1
+cisIL6R	met-d-XL_HDL_FC	Free cholesterol in very large HDL || id:met-d-XL_HDL_FC	cisIL6R	Inverse variance weighted	26	-0.04006774455441284	0.03856619990529031	0.29883533325707456	1
+cisIL6R	met-d-XL_HDL_FC_pct	Free cholesterol to total lipids ratio in very large HDL || id:met-d-XL_HDL_FC_pct	cisIL6R	Inverse variance weighted	26	-0.01684505494886509	0.02822910018837792	0.5506899308153729	1
+cisIL6R	met-d-XL_HDL_L	Total lipids in very large HDL || id:met-d-XL_HDL_L	cisIL6R	Inverse variance weighted	26	-0.017925952775977045	0.03301348927472667	0.5871375586641008	1
+cisIL6R	met-d-XL_HDL_P	Concentration of very large HDL particles || id:met-d-XL_HDL_P	cisIL6R	Inverse variance weighted	26	0.012624150299653534	0.03215901721432584	0.6946489327148048	1
+cisIL6R	met-d-XL_HDL_PL	Phospholipids in very large HDL || id:met-d-XL_HDL_PL	cisIL6R	Inverse variance weighted	26	-0.02669893249456605	0.03312419813764741	0.4202284222642264	1
+cisIL6R	met-d-XL_HDL_PL_pct	Phospholipids to total lipids ratio in very large HDL || id:met-d-XL_HDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.057771340351873264	0.03261609962750222	0.07651876146242491	1
+cisIL6R	met-d-XL_HDL_TG	Triglycerides in very large HDL || id:met-d-XL_HDL_TG	cisIL6R	Inverse variance weighted	26	0.05530408513862541	0.03298280608515154	0.09359039992121582	1
+cisIL6R	met-d-XL_HDL_TG_pct	Triglycerides to total lipids ratio in very large HDL || id:met-d-XL_HDL_TG_pct	cisIL6R	Inverse variance weighted	26	0.045558653275470054	0.030135383721294307	0.1305849169129888	1
+cisIL6R	met-d-XL_VLDL_C	Cholesterol in very large VLDL || id:met-d-XL_VLDL_C	cisIL6R	Inverse variance weighted	26	0.07814054331350195	0.025314836319544266	0.002023584507253992	0.6961130704953733
+cisIL6R	met-d-XL_VLDL_C_pct	Cholesterol to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_C_pct	cisIL6R	Inverse variance weighted	26	0.02004683856929162	0.026683397776322178	0.4524811078827106	1
+cisIL6R	met-d-XL_VLDL_CE	Cholesteryl esters in very large VLDL || id:met-d-XL_VLDL_CE	cisIL6R	Inverse variance weighted	26	0.08825416211066825	0.02551020488184432	5.410525987443502e-4	0.20722314531908612
+cisIL6R	met-d-XL_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.03389873141816004	0.026044897720481575	0.1930703300378096	1
+cisIL6R	met-d-XL_VLDL_FC	Free cholesterol in very large VLDL || id:met-d-XL_VLDL_FC	cisIL6R	Inverse variance weighted	26	0.06078597925550608	0.025106205380044044	0.01547133895815876	1
+cisIL6R	met-d-XL_VLDL_FC_pct	Free cholesterol to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_FC_pct	cisIL6R	Inverse variance weighted	26	-0.04526219227996441	0.030456783635581287	0.1372494931952021	1
+cisIL6R	met-d-XL_VLDL_L	Total lipids in very large VLDL || id:met-d-XL_VLDL_L	cisIL6R	Inverse variance weighted	26	0.06610803850409017	0.02493973015976554	0.008032233388932664	1
+cisIL6R	met-d-XL_VLDL_P	Concentration of very large VLDL particles || id:met-d-XL_VLDL_P	cisIL6R	Inverse variance weighted	26	0.06683096920459038	0.02491289220787966	0.007305542391996727	1
+cisIL6R	met-d-XL_VLDL_PL	Phospholipids in very large VLDL || id:met-d-XL_VLDL_PL	cisIL6R	Inverse variance weighted	26	0.06180025421224998	0.02501382340757263	0.01348699844967959	1
+cisIL6R	met-d-XL_VLDL_PL_pct	Phospholipids to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.06058376510725734	0.030511299372544123	0.04707582955650941	1
+cisIL6R	met-d-XL_VLDL_TG	Triglycerides in very large VLDL || id:met-d-XL_VLDL_TG	cisIL6R	Inverse variance weighted	26	0.059801426678293274	0.02540302534775414	0.018567291380768368	1
+cisIL6R	met-d-XL_VLDL_TG_pct	Triglycerides to total lipids ratio in very large VLDL || id:met-d-XL_VLDL_TG_pct	cisIL6R	Inverse variance weighted	26	-0.005012145147439466	0.02651505767200829	0.8500691918464203	1
+cisIL6R	met-d-XS_VLDL_C	Cholesterol in very small VLDL || id:met-d-XS_VLDL_C	cisIL6R	Inverse variance weighted	26	0.025715147635118403	0.026795146561796407	0.33720912645147283	1
+cisIL6R	met-d-XS_VLDL_C_pct	Cholesterol to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_C_pct	cisIL6R	Inverse variance weighted	26	0.06468806985813234	0.03632860195263233	0.07497169441736384	1
+cisIL6R	met-d-XS_VLDL_CE	Cholesteryl esters in very small VLDL || id:met-d-XS_VLDL_CE	cisIL6R	Inverse variance weighted	26	0.0311953125875254	0.027679358563711867	0.25973216312659764	1
+cisIL6R	met-d-XS_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.07038273251510026	0.035381396321875314	0.04667271166123395	1
+cisIL6R	met-d-XS_VLDL_FC	Free cholesterol in very small VLDL || id:met-d-XS_VLDL_FC	cisIL6R	Inverse variance weighted	26	0.009271037047216399	0.025466623402916784	0.7158232296966418	1
+cisIL6R	met-d-XS_VLDL_FC_pct	Free cholesterol to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_FC_pct	cisIL6R	Inverse variance weighted	26	0.002446528301384192	0.03971435264601881	0.9508788868568893	1
+cisIL6R	met-d-XS_VLDL_L	Total lipids in very small VLDL || id:met-d-XS_VLDL_L	cisIL6R	Inverse variance weighted	26	0.011988531220532943	0.025475752485420625	0.6379364418827327	1
+cisIL6R	met-d-XS_VLDL_P	Concentration of very small VLDL particles || id:met-d-XS_VLDL_P	cisIL6R	Inverse variance weighted	26	0.013071272907847955	0.025572719568342905	0.6092521243205229	1
+cisIL6R	met-d-XS_VLDL_PL	Phospholipids in very small VLDL || id:met-d-XS_VLDL_PL	cisIL6R	Inverse variance weighted	26	-0.008252567456971404	0.02583488807330881	0.7493966741783578	1
+cisIL6R	met-d-XS_VLDL_PL_pct	Phospholipids to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.17579839658807483	0.027384331543199168	1.3656925314287607e-10	6.719207254629502e-8
+cisIL6R	met-d-XS_VLDL_TG	Triglycerides in very small VLDL || id:met-d-XS_VLDL_TG	cisIL6R	Inverse variance weighted	26	-0.01149400651223878	0.030424576090361855	0.7055889005351019	1
+cisIL6R	met-d-XS_VLDL_TG_pct	Triglycerides to total lipids ratio in very small VLDL || id:met-d-XS_VLDL_TG_pct	cisIL6R	Inverse variance weighted	26	-0.037294824825818175	0.039398515732515904	0.3438401877867724	1
+cisIL6R	met-d-XXL_VLDL_C	Cholesterol in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_C	cisIL6R	Inverse variance weighted	26	0.04430944562237568	0.025118727510987125	0.07773191020325075	1
+cisIL6R	met-d-XXL_VLDL_C_pct	Cholesterol to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_C_pct	cisIL6R	Inverse variance weighted	26	0.016232014929034505	0.025997634978223282	0.5323878656656547	1
+cisIL6R	met-d-XXL_VLDL_CE	Cholesteryl esters in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_CE	cisIL6R	Inverse variance weighted	26	0.06553746750230172	0.02503495125037318	0.00884885885335328	1
+cisIL6R	met-d-XXL_VLDL_CE_pct	Cholesteryl esters to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_CE_pct	cisIL6R	Inverse variance weighted	26	0.06406984027202701	0.026139014203447008	0.014241277326048844	1
+cisIL6R	met-d-XXL_VLDL_FC	Free cholesterol in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_FC	cisIL6R	Inverse variance weighted	26	0.027494843354585553	0.026402586623474073	0.29770418145333305	1
+cisIL6R	met-d-XXL_VLDL_FC_pct	Free cholesterol to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_FC_pct	cisIL6R	Inverse variance weighted	26	-0.06637234713222445	0.02583148579235319	0.010186423294536269	1
+cisIL6R	met-d-XXL_VLDL_L	Total lipids in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_L	cisIL6R	Inverse variance weighted	26	0.03142539279823339	0.026792641539427925	0.24083136592305573	1
+cisIL6R	met-d-XXL_VLDL_P	Concentration of chylomicrons and extremely large VLDL particles || id:met-d-XXL_VLDL_P	cisIL6R	Inverse variance weighted	26	0.023686167657238768	0.026566420715819918	0.37261651420082825	1
+cisIL6R	met-d-XXL_VLDL_PL	Phospholipids in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_PL	cisIL6R	Inverse variance weighted	26	0.025278845822449107	0.02571504871297732	0.32558920044391576	1
+cisIL6R	met-d-XXL_VLDL_PL_pct	Phospholipids to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_PL_pct	cisIL6R	Inverse variance weighted	26	-0.11101082251691777	0.0361644824304732	0.0021433914131100953	0.7330398632836526
+cisIL6R	met-d-XXL_VLDL_TG	Triglycerides in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_TG	cisIL6R	Inverse variance weighted	26	0.030230826502375636	0.026060279335292064	0.24603470693835988	1
+cisIL6R	met-d-XXL_VLDL_TG_pct	Triglycerides to total lipids ratio in chylomicrons and extremely large VLDL || id:met-d-XXL_VLDL_TG_pct	cisIL6R	Inverse variance weighted	26	0.015162591409328716	0.02624598844144325	0.563459375334854	1

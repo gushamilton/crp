@@ -1,0 +1,337 @@
+---
+title: "Initial analysis of data"
+format: html
+editor: visual
+---
+
+## Initial data analysis
+
+Bring in packages
+
+```{r}
+pacman::p_load(rms, tidyverse, vroom, survival, lubridate, janitor, broom, Hmisc, gt, gtsummary, patchwork, data.table, survminer, ggcorrplot)
+```
+
+Bring in covariates data: this includes covariates at the time of UKB attendance
+
+Bring in outcome data:
+
+```{r}
+covars <- vroom("~/data/CRP/covariates_cleaned_rap.tsv.gz")
+hes <- vroom("~/data/CRP/HES_icd_10_infections_only.tsv.gz")
+prim_care <-  vroom("~/data/CRP/primary_care_icd_10_infections_only.tsv.gz")
+# metabs <- vroom("~/data/CRP/final_hdl_for_models.tsv.gz") %>%
+#   select(eid, 71:395)
+prim_care_crp <- data.table::fread("~/data/CRP/primary_care_crp.tsv.gz")
+phase_2 <- vroom("~/hdl/phase_2_metabs.tsv.gz")
+
+phase_2_initial <- phase_2 %>%
+  filter(visit == "Main Phase")
+
+#metabs_old <- vroom("~/data/CRP/final_hdl_for_models.tsv.gz") 
+transplant <- vroom("~/data/CRP/transplant_list.tsv.gz")
+common_prs <- fread("~/data/CRP/gwas/plink2.sscore.gz")
+common_prs_promoter <- fread("~/data/CRP/gwas/plink2_promoter.score.gz")
+common_prs_genome <- fread("~/data/CRP/gwas/genome_wide.score.gz")
+rare_var <- data.table::fread("~/data/CRP/exome/called_rare_var.raw.gz")
+cis_promoter_LD <- fread("~/data/CRP/gwas/common_cis_promoter.gz")
+rare_var %>%
+  filter(`1:159714024:G:A_A` == 2)
+linker_IEU <- data.table::fread("~/data/CRP/ref_link/eids_merge.tsv.gz")
+linker_MY <- data.table::fread("~/data/CRP/ref_link/linker_MY_APP.csv.gz")
+
+
+prim_care_linked <- data.table::fread("~/data/CRP/icd_10_added_primary_care_events.tsv.gz") %>%
+  select(eid) %>%
+  distinct()
+
+cis_promoter_LD <- cis_promoter_LD %>%
+  rename(ieu = IID) %>%
+  left_join(linker_MY) %>%
+  select(-c(FID, ieu, PAT, MAT, SEX, PHENOTYPE))
+
+
+
+covars  %>%
+  filter(eid == 4422302) %>%
+  view()
+
+principle_components <- data.table::fread("~/data/CRP/principal_components.tsv.gz") %>%
+  clean_names() %>%
+  rename(eid = participant_id)
+
+principle_components %>%
+  select(-eid) %>%
+  distinct()
+
+colnames(principle_components) <- colnames(principle_components) %>%
+  str_replace("genetic_principal_components_array_", "PC")
+
+
+principle_components
+quantile(covars$c_reactive_protein,0.0001, na.rm = T)
+covars %>%
+  arrange(c_reactive_protein) %>%
+  select(c_reactive_protein) %>%
+  count(c_reactive_protein)
+
+crp_dat<- vroom("~/data/CRP/data_participant.tsv.gz", guess_max = 1e5,col_select = c(contains("Partic"), contains("reactive"))) 
+
+crp_dat <- crp_dat %>%
+    rename(eid = `Participant ID`) %>%
+  clean_names() 
+
+
+
+hes %>%
+  filter(str_detect(meaning, "A40")) %>%
+  view()
+  count(eid)
+```
+
+Tidy genetic data first to keep neat
+
+```{r}
+common_prs <- common_prs %>%
+  as_tibble() %>%
+  select(ieu = IID, crp_prs = SCORE1_AVG) %>%
+  mutate(crp_prs_scaled = scale(crp_prs)[,1]) %>%
+  left_join(linker_MY) %>%
+  select(eid, crp_prs, crp_prs_scaled)
+
+
+common_prs_promoter <- common_prs_promoter %>%
+  as_tibble() %>%
+  select(ieu = IID, crp_prs_promoter = SCORE1_AVG) %>%
+  mutate(crp_prs_scaled_promoter = scale(crp_prs_promoter)[,1]) %>%
+  left_join(linker_MY) %>%
+  select(eid, crp_prs_promoter, crp_prs_scaled_promoter)
+
+
+common_prs_genome <- common_prs_genome %>%
+  as_tibble() %>%
+  select(ieu = IID, crp_prs_genome= SCORE1_AVG) %>%
+  mutate(crp_prs_scaled_genome = scale(crp_prs_genome)[,1]) %>%
+  left_join(linker_MY) %>%
+  select(eid, crp_prs_genome, crp_prs_scaled_genome)
+
+common_prs_genome %>%
+  left_join(common_prs) %>%
+  sample_n(10000) %>%
+  ggplot(aes(x = crp_prs_scaled_genome, y = crp_prs_scaled)) +
+  geom_point() +
+  geom_smooth(method = "lm")
+
+colnames(rare_var)
+rare_var <- rare_var %>%
+  clean_names() %>%
+  as_tibble() %>%
+  select(participant_id = fid, contains("x1")) %>%
+  mutate(participant_id = as.numeric(participant_id)) %>%
+  select(rare_var_CRP = x1_159714024_g_a_a, participant_id) %>%
+  left_join(linker_IEU) %>%
+  drop_na(eid) %>%
+  select(eid, rare_var_CRP)
+
+
+```
+
+l
+
+```{r}
+
+metabs <- rare_var %>%
+  left_join(linker_MY) %>%
+  select(eid, rare_var_CRP, IID = ieu) %>%
+  drop_na() %>%
+  left_join(phase_2_initial) %>%
+  distinct() %>%
+  drop_na()
+
+metabs <- metabs %>%
+  mutate(homo = if_else(rare_var_CRP == 2,1,0))
+list <- colnames(metabs)[9:257]
+
+run_analysis <- function(x) {
+f <- paste0(x  ,"~ rare_var_CRP")
+f2 <- paste0(x  ,"~ homo")
+m <- lm(f, data = metabs) %>%
+  tidy() %>%
+  filter(term == "rare_var_CRP") %>%
+  mutate(term = x) %>%
+  mutate(model = "homo")
+
+lm(f2, data = metabs) %>%
+  tidy() %>%
+  filter(term == "homo") %>%
+  mutate(term = x) %>%
+  mutate(model = "addit") %>%
+  bind_rows(m)
+  
+}
+res <- map_dfr(list, run_analysis)
+res %>%
+  arrange(p.value) %>%
+  view()
+
+crp_dat
+rare_var %>%
+  left_join(crp_dat) %>%
+  count(rare_var_CRP, c_reactive_protein_reportability_instance_0)
+
+rare_var %>%
+  filter(rare_var_CRP == 2) %>%
+  left_join(crp_dat) %>%
+  view()
+
+
+rare_var %>%
+  left_join(crp_dat) %>%
+  left_join(common_prs_promoter) %>%
+  group_by(c_reactive_protein_reportability_instance_0, rare_var_CRP) %>%
+  summarise(prs_sum = mean(crp_prs_scaled_promoter, na.rm = T))
+
+
+
+rare_var %>%
+  left_join(crp_dat) %>%
+  left_join(common_prs_genome) %>%
+  group_by(c_reactive_protein_reportability_instance_0, rare_var_CRP) %>%
+  summarise(prs_sum = mean(crp_prs_scaled_genome, na.rm = T))
+
+```
+
+```{r}
+rare_var %>%
+  left_join(common_prs_promoter) %>%
+  group_by(rare_var_CRP) %>%
+  summarise(mean_prs = mean(crp_prs_scaled_promoter, na.rm = T),
+            sd_prs = sd(crp_prs_scaled_promoter, na.rm = T)) %>%
+  gt::gt()
+
+
+rare_var %>%
+  left_join(common_prs_genome) %>%
+  group_by(rare_var_CRP) %>%
+  summarise(mean_prs = mean(crp_prs_scaled_genome, na.rm = T),
+            sd_prs = sd(crp_prs_scaled_genome, na.rm = T)) %>%
+  gt::gt()
+
+lin_mod <- rare_var %>%
+    filter(rare_var_CRP != 2) %>%
+  left_join(common_prs_promoter) %>%
+  left_join(covars) %>%
+
+  group_by(rare_var_CRP, sex) %>%
+  nest() %>%
+  mutate(fit = map(data,~lm(c_reactive_protein ~ crp_prs_scaled_promoter, data = .x))) %>%
+mutate(results = map(fit, tidy))
+
+lin_mod %>%
+  unnest(results) %>%
+  filter(term != "(Intercept)")
+
+lin_mod <- rare_var %>%
+    filter(rare_var_CRP != 2) %>%
+
+  left_join(common_prs_promoter) %>%
+  left_join(covars) %>%
+    mutate(sex = ntile(age_at_recruitment, 3)) %>%
+
+  group_by(rare_var_CRP, sex) %>%
+  nest() %>%
+  mutate(fit = map(data,~lm(c_reactive_protein ~ crp_prs_scaled_promoter, data = .x))) %>%
+mutate(results = map(fit, tidy))
+
+
+lin_mod %>%
+  unnest(results) %>%
+  filter(term != "(Intercept)") %>%
+  mutate(Age_tertile = as.character(sex),
+         rare_var_CRP = as.character(rare_var_CRP)) %>%
+  arrange(Age_tertile) %>%
+  ungroup() %>%
+  ggforestplot::forestplot(
+   colour = rare_var_CRP,
+    name = Age_tertile,
+    estimate = estimate, 
+    se = std.error
+  )
+
+```
+
+LD
+
+```{r}
+
+LD <-cis_promoter_LD %>%
+  left_join(rare_var) %>%
+  select(-V1, -contains("HET"), -app, -eid)
+
+corr <- cor(LD, use = "complete.obs")
+p.mat <- cor_pmat(LD)
+p.mat
+ggcorrplot(corr, method = "circle", lab = T)
+
+```
+
+```{r}
+p1 <-rare_var %>%
+  left_join(crp_dat) %>%
+  left_join(common_prs_promoter) %>%
+  # filter(c_reactive_protein_reportability_instance_0 == "Not reportable at assay (too low)") %>%
+  ggplot(aes(x = as.factor(rare_var_CRP), y = crp_prs_scaled_promoter)) +
+  geom_boxplot() +
+  xlab("Copies of rare deleterious variant") +
+  ylab("Promoter PRS") +
+  theme_bw()
+
+
+
+p2 <- rare_var %>%
+  left_join(crp_dat) %>%
+  left_join(common_prs_genome) %>%
+  # filter(c_reactive_protein_reportability_instance_0 == "Not reportable at assay (too low)") %>%
+  ggplot(aes(x = as.factor(rare_var_CRP), y = crp_prs_scaled_genome)) +
+  geom_boxplot() +
+  xlab("Copies of rare deleterious variant") +
+  ylab("Genome wide PRS") +
+  theme_bw()
+
+
+
+p3 <-rare_var %>%
+  left_join(crp_dat) %>%
+  left_join(common_prs_promoter) %>%
+  filter(c_reactive_protein_reportability_instance_0 == "Not reportable at assay (too low)") %>%
+  ggplot(aes(x = as.factor(rare_var_CRP), y = crp_prs_scaled_promoter)) +
+  geom_boxplot() +
+  xlab("Copies of rare deleterious variant") +
+  ylab("Promoter PRS") +
+  theme_bw()
+
+
+
+p4 <- rare_var %>%
+  left_join(crp_dat) %>%
+  left_join(common_prs_genome) %>%
+  filter(c_reactive_protein_reportability_instance_0 == "Not reportable at assay (too low)") %>%
+  ggplot(aes(x = as.factor(rare_var_CRP), y = crp_prs_scaled_genome)) +
+  geom_boxplot() +
+  xlab("Copies of rare deleterious variant") +
+  ylab("Genome wide PRS") +
+  theme_bw()
+
+
+
+p1 + p2 + p3 + p4 + plot_annotation(tag_levels = "A")
+
+
+rare_var %>%
+  left_join(crp_dat) %>%
+  left_join(common_prs_genome) %>%
+  filter(c_reactive_protein_reportability_instance_0 == "Not reportable at assay (too low)") %>%
+  ggplot(aes(x = crp_prs_scaled_genome)) +
+  geom_histogram()
+
+```

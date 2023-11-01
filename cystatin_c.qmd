@@ -1,0 +1,915 @@
+---
+title: "Initial analysis of data"
+format: html
+editor: visual
+---
+
+## Initial data analysis
+
+Bring in packages
+
+```{r}
+pacman::p_load(rms, tidyverse, vroom, survival, lubridate, janitor, broom, Hmisc, gt, gtsummary, patchwork, nephro)
+```
+
+Bring in covariates data: this includes covariates at the time of UKB attendance
+
+Bring in outcome data:
+
+```{r}
+covars <- vroom("~/data/CRP/covariates_cleaned_rap.tsv.gz")
+hes <- vroom("~/data/CRP/HES_icd_10_infections_only.tsv.gz")
+prim_care <-  vroom("~/data/CRP/primary_care_icd_10_infections_only.tsv.gz")
+metabs <- vroom("~/data/CRP/final_hdl_for_models.tsv.gz") %>%
+  select(eid, 71:395)
+
+metabs_old <- vroom("~/data/CRP/final_hdl_for_models.tsv.gz") 
+transplant <- vroom("~/data/CRP/transplant_list.tsv.gz")
+
+rap_data <- vroom("~/data/CRP/data_participant.tsv.gz", guess_max = 5e5) %>%
+  janitor::clean_names() %>%
+  select(contains(c("date", "participant"))) 
+```
+
+Generate a dataset for Cox regression: only including first event and filtering on after study.
+
+```{r}
+hes %>%
+    count(category, sort = T)
+
+event_data <- covars %>%
+  select(eid, study_entry) %>%
+  left_join(hes) %>%
+  mutate(event_dt = dmy(event_dt)) %>%
+  arrange(event_dt) %>%
+  filter(study_entry < event_dt) %>%
+  mutate(time_event = as.numeric(difftime(event_dt,study_entry,  units = "days"))) %>%
+  mutate(had_infection = if_else(time_event>0 ,1,0),
+         had_sepsis = if_else(organ_system == "Sepsis",1,0),
+         had_pneumonia = if_else(category == "Pneumonia",1,0),
+         )
+
+infection_events <- event_data %>%
+  group_by(eid) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(eid, time_event_infection = time_event, had_infection)
+
+quantile(infection_events$time_event_infection)
+
+sepsis_events <- event_data %>%
+  filter(had_sepsis ==1) %>%
+  group_by(eid) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(eid, time_event_sepsis = time_event, had_sepsis)
+
+quantile(sepsis_events$time_event_sepsis)
+
+pneumonia_events <- event_data %>%
+  filter(had_pneumonia ==1) %>%
+  group_by(eid) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(eid, time_event_pneumonia = time_event, had_pneumonia)
+
+mi <- rap_data %>%
+  select(eid = participant_id, date_of_myocardial_infarction, date_of_attending_assessment_centre_instance_0) %>%
+  mutate(history_MI = case_when(ymd(date_of_myocardial_infarction) > date_of_attending_assessment_centre_instance_0 ~1 , TRUE ~ 0)) %>%   mutate(time_event_mi = as.numeric(difftime(ymd(date_of_myocardial_infarction),date_of_attending_assessment_centre_instance_0,  units = "days"))) %>%
+  
+  select(eid, had_mi = history_MI, time_event_mi)
+mi
+quantile(pneumonia_events$time_event_pneumonia)
+```
+
+Link to covars:
+
+```{r}
+
+hes %>%
+  arrange(event_dt) %>%
+  tail()
+
+
+cox_ready <- covars %>%
+  left_join(infection_events) %>%
+  left_join(sepsis_events) %>%
+  left_join(pneumonia_events) %>%
+  left_join(mi) %>%
+  replace_na(list(had_pneumonia =0, had_sepsis = 0, had_infection = 0)) %>%
+   mutate(max_fu = as.numeric(difftime(ymd("2020-12-31"),study_entry,  units = "days"))) %>%
+  mutate(time_event_infection = if_else(is.na(time_event_infection), max_fu, time_event_infection)) %>%
+  mutate(time_event_pneumonia = if_else(is.na(time_event_pneumonia), max_fu, time_event_pneumonia)) %>%
+  mutate(time_event_sepsis = if_else(is.na(time_event_sepsis), max_fu, time_event_sepsis)) %>%
+    mutate(time_event_mi = if_else(is.na(time_event_mi), max_fu, time_event_mi)) %>%
+  mutate(time_to_death = as.numeric(difftime(date_of_death, study_entry, units = "days"))) %>%
+  mutate(time_event_infection= if_else(is.na(date_of_death), time_event_infection, time_to_death)) %>%
+  mutate(time_event_sepsis= if_else(is.na(date_of_death), time_event_sepsis, time_to_death)) %>%
+  mutate(time_event_pneumonia= if_else(is.na(date_of_death), time_event_pneumonia, time_to_death)) %>%
+  mutate(time_event_mi= if_else(is.na(date_of_death), time_event_mi, time_to_death)) 
+
+
+```
+
+Table 1
+
+```{r}
+cox_ready %>%
+  drop_na(c_reactive_protein) %>%
+  mutate(c_reactive_protein = Hmisc::cut2(c_reactive_protein, g = 4)) %>%
+  select(age_at_entry, sex, history_stroke, history_MI, history_asthma, history_copd, history_dementia, history_liver, history_cancer, ever_smoked, townsend_deprivation_index_at_recruitment, body_mass_index_bmi, creatinine, c_reactive_protein) %>%
+    tbl_summary(by = "c_reactive_protein") %>%
+  add_p()
+    
+
+```
+
+text
+
+```{r}
+
+final %>%
+  ggplot(aes(x = (cystatin_c))) +
+  geom_histogram() +
+  scale_x_log10() +
+  theme_bw()
+
+quantile(final$cystatin_c, na.rm = T)
+```
+
+Figure 1
+
+```{r}
+p1<-cox_ready %>%
+  mutate(crp = ntile(log(cystatin_c), 10)) %>%
+  group_by(crp) %>%
+     drop_na(c_reactive_protein) %>%
+  group_by(crp) %>%
+  summarise(median_crp = median(cystatin_c),
+            bmean_pneumonia = mean(had_infection)) %>%
+   pivot_longer(contains("mean")) %>%
+   ggplot(aes(x = median_crp, y = value)) +
+   geom_point() +
+  geom_line() +
+   theme_bw() +
+   ylab("Proportion with event") +
+    xlab("Cystatin C mg/L)") +
+  ylim(0.05,0.27)
+p1
+p2<-cox_ready %>%
+  mutate(crp = ntile(log(body_mass_index_bmi), 10)) %>%
+  group_by(crp) %>%
+     drop_na(c_reactive_protein) %>%
+  group_by(crp) %>%
+  summarise(median_crp = median(body_mass_index_bmi),
+            bmean_pneumonia = mean(had_infection)) %>%
+   pivot_longer(contains("mean")) %>%
+   ggplot(aes(x = median_crp, y = value)) +
+   geom_point() +
+  geom_line() +
+   theme_bw() +
+   ylab("Proportion with event") +
+  xlab("Body mass index (kg/m2)") +
+  ylim(0.05,0.27)
+p1/p2
+```
+
+Add in and scale variables:
+
+```{r}
+
+
+scaled <- cox_ready %>%
+  select(2:27) %>%
+  mutate(across(everything(),~ (. - mean(., na.rm = T)) / sd(., na.rm = T)))
+
+colnames(scaled) <- colnames(scaled) %>%
+  paste0("_scaled")
+
+log_scaled <- cox_ready %>%
+  select(2:27) %>%
+  mutate(across(everything(), ~log(. + 0.000001))) %>%
+     mutate(across(everything(),~ (. - mean(., na.rm = T)) / sd(., na.rm = T)))
+
+
+colnames(log_scaled) <- colnames(log_scaled) %>%
+  paste0("_log_scaled")
+
+
+metabs_scaled <- metabs %>%
+  select(-1) %>%
+  mutate(across(everything(),~ (. - mean(., na.rm = T)) / sd(., na.rm = T)))
+
+colnames(metabs_scaled) <- colnames(metabs_scaled) %>%
+  paste0("_scaled")
+
+  
+metabs_log_scaled <- metabs %>%
+  select(-1) %>%
+   mutate(across(everything(), ~log(. + 0.000001))) %>%
+  mutate(across(everything(),~ (. - mean(., na.rm = T)) / sd(., na.rm = T)))
+
+colnames(metabs_log_scaled) <- colnames(metabs_log_scaled) %>%
+  paste0("_log_scaled")
+
+
+metab_model <- metabs %>%
+  select(eid) %>%
+  bind_cols(metabs_scaled, metabs_log_scaled)
+
+metab_model <- Filter(function(x)!all(is.na(x)), metab_model)
+
+final <- cox_ready %>%
+  bind_cols(scaled, log_scaled) %>%
+  left_join(metab_model) %>%
+  mutate(ln_crp = log(c_reactive_protein)) 
+
+m_resid <- lm(ln_crp ~ body_mass_index_bmi, data = final)
+
+
+
+
+final <- final %>%
+  left_join(mi)
+
+```
+
+Generate renal function
+
+```{r}
+
+final <- final %>%
+  mutate(sex_b = if_else(sex == "Male",1,0), 
+         ethnicity = 0)
+final <- final %>% mutate(
+egfr_cys = CKDEpi.cys(final$cystatin_c, final$sex_b, final$age_at_entry),
+egfr_cre = CKDEpi.creat(final$creatinine/88.4, final$sex_b, final$age_at_entry, final$ethnicity),
+egfr_cys_cr = CKDEpi.creat.cys(final$creatinine/88.4, final$cystatin_c, final$sex_b, final$age_at_entry, final$ethnicity))
+
+
+```
+
+Compare RINT vs lognormalising
+
+```{r}
+
+inormal <- function(x) qnorm((rank(x, na.last = "keep") - 0.5) / sum(!is.na(x)))
+
+final %>%
+  mutate(rank_inverse = inormal(cystatin_c)) %>%
+  select(rank_inverse, cystatin_c_log_scaled) %>%
+  sample_n(1e4) %>%
+  ggplot(aes(x = rank_inverse, y = cystatin_c_log_scaled)) +
+  geom_point()
+```
+
+```{r}
+p1 <-final %>%
+   select(egfr_cys_cr, cystatin_c_log_scaled) %>%
+  sample_n(1e5) %>%
+  ggplot(aes(x = egfr_cys_cr, y = cystatin_c_log_scaled)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_bw()
+
+
+p2 <-final %>%
+   select(egfr_cys, cystatin_c_log_scaled) %>%
+  sample_n(1e5) %>%
+  ggplot(aes(x = egfr_cys, y = cystatin_c_log_scaled)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_bw()
+
+p3 <-final %>%
+   select(egfr_cre, cystatin_c_log_scaled) %>%
+  sample_n(1e5) %>%
+  ggplot(aes(x = egfr_cre, y = cystatin_c_log_scaled)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_bw()
+
+p4 <-final %>%
+   select(creatinine, cystatin_c_log_scaled) %>%
+  sample_n(1e5) %>%
+  ggplot(aes(x = creatinine, y = cystatin_c_log_scaled)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  theme_bw()
+p1 + p2 + p3+ p4
+```
+
+```{r}
+x <- "Surv(time_event_infection, had_infection)" 
+
+run_table_2 <- function(x, y) {
+f <- as.formula(sprintf(paste0(x, "~ cystatin_c_log_scaled + sex + rcs(scale(age_at_entry)) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + c_reactive_protein_log_scaled + body_mass_index_bmi_scaled")))
+m <- (coxph(formula = f, data = final))
+m1 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "no renal")
+
+f <- as.formula(sprintf(paste0(x, "~ cystatin_c_log_scaled + sex + rcs(scale(age_at_entry)) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cre + c_reactive_protein_log_scaled  + body_mass_index_bmi_scaled + townsend_deprivation_index_at_recruitment")))
+m <- (coxph(formula = f, data = final))
+m2 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "egfr_cr only")
+
+f <- as.formula(sprintf(paste0(x, "~ cystatin_c_log_scaled + sex + rcs(scale(age_at_entry)) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cys + c_reactive_protein_log_scaled  + body_mass_index_bmi_scaled + townsend_deprivation_index_at_recruitment")))
+m <- (coxph(formula = f, data = final))
+m3 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "egfr_cys")
+
+
+f <- as.formula(sprintf(paste0(x, "~ cystatin_c_log_scaled + sex + rcs(scale(age_at_entry)) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cys_cr + c_reactive_protein_log_scaled  + body_mass_index_bmi_scaled + townsend_deprivation_index_at_recruitment")))
+m <- (coxph(formula = f, data = final))
+m4 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "egfr_cr_cys")
+
+m1 %>%
+  bind_rows(m2) %>%
+  bind_rows(m3) %>%
+  bind_rows(m4)
+}
+
+tab2 <- bind_rows(
+run_table_2("Surv(time_event_infection, had_infection)", "Infection"),
+run_table_2("Surv(time_event_pneumonia, had_pneumonia)", "Pneumonia"),
+run_table_2("Surv(time_event_sepsis, had_sepsis)", "Sepsis"),
+run_table_2("Surv(time_event_mi, had_mi)", "MI"),
+)
+
+tab2 %>%
+  filter(term == "cystatin_c_log_scaled") %>%
+  mutate(across(c(estimate,conf.low, conf.high, p.value),~ signif(.x, digits = 3))) %>%
+  transmute(model, estimate = paste0(estimate, " (", conf.low, "-",conf.high,")"), p.value, adj) %>%
+  group_by(model) %>%
+  gt::gt()
+```
+
+resid
+
+```{r}
+resid_d <- final %>%
+    drop_na(cystatin_c_log_scaled, egfr_cys_cr, c_reactive_protein_log_scaled)
+
+resid_mod <- lm(cystatin_c_log_scaled ~ egfr_cys_cr, data = resid_d)
+summary(resid_mod)
+```
+
+```{r}
+resid_d%>%
+  mutate(cys_resid = resid_mod$residuals) %>%
+  sample_n(1e4) %>%
+  ggplot(aes(x =cys_resid, y = egfr_cys_cr)) +
+    geom_point() +
+  theme_bw() +
+  geom_smooth(method ="lm")
+
+
+resid_d%>%
+  mutate(cys_resid = resid_mod$residuals) %>%
+  sample_n(1e4) %>%
+  ggplot(aes(x =cys_resid, y = c_reactive_protein_log_scaled)) +
+    geom_point() +
+  theme_bw() +
+  geom_smooth(method ="lm")
+
+resid_d <-resid_d%>%
+  mutate(cys_resid = scale(resid_mod$residuals)) 
+
+
+```
+
+```{r}
+x <- "Surv(time_event_infection, had_infection)" 
+
+run_table_2 <- function(x, y) {
+f <- as.formula(sprintf(paste0(x, "~ cys_resid + sex + rcs(scale(age_at_entry)) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + c_reactive_protein_log_scaled + body_mass_index_bmi_scaled")))
+m <- (coxph(formula = f, data = resid_d))
+m1 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "no renal")
+
+f <- as.formula(sprintf(paste0(x, "~ cys_resid + sex + rcs(scale(age_at_entry)) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cre + c_reactive_protein_log_scaled  + body_mass_index_bmi_scaled")))
+m <- (coxph(formula = f, data = resid_d))
+m2 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "egfr_cr only")
+
+f <- as.formula(sprintf(paste0(x, "~ cys_resid + sex + rcs(scale(age_at_entry)) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cys + c_reactive_protein_log_scaled  + body_mass_index_bmi_scaled")))
+m <- (coxph(formula = f, data = resid_d))
+m3 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "egfr_cys")
+
+
+f <- as.formula(sprintf(paste0(x, "~ cys_resid + sex + rcs(scale(age_at_entry)) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cys_cr + c_reactive_protein_log_scaled  + body_mass_index_bmi_scaled")))
+m <- (coxph(formula = f, data = resid_d))
+m4 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "egfr_cr_cys")
+
+m1 %>%
+  bind_rows(m2) %>%
+  bind_rows(m3) %>%
+  bind_rows(m4)
+}
+
+tab2 <- bind_rows(
+run_table_2("Surv(time_event_infection, had_infection)", "Infection"),
+run_table_2("Surv(time_event_pneumonia, had_pneumonia)", "Pneumonia"),
+run_table_2("Surv(time_event_sepsis, had_sepsis)", "Sepsis"),
+run_table_2("Surv(time_event_mi, had_mi)", "MI"))
+
+tab2 %>%
+  filter(term == "cys_resid") %>%
+  mutate(across(c(estimate,conf.low, conf.high, p.value),~ signif(.x, digits = 3))) %>%
+  transmute(model, estimate = paste0(estimate, " (", conf.low, "-",conf.high,")"), p.value, adj) %>%
+  group_by(model) %>%
+  gt::gt()
+```
+
+MR
+
+```{r}
+exposures <- extract_instruments("ukb-d-30720_irnt")
+outcomes <- extract_outcome_data(exposures$SNP, "ieu-b-4976")
+dat <- harmonise_data(exposures, outcomes)
+res <- mr(dat)
+res
+mr_scatter_plot(res, dat)
+
+il6 <- vroom("https://github.com/gushamilton/il6-sepsis/raw/main/data/harmonised_data_final.tsv") %>%
+  filter(exposure == "cisIL6R") %>%
+  select(contains("exposure"), SNP) %>%
+  distinct()
+
+outcome_cys <- extract_outcome_data(il6$SNP, "ebi-a-GCST005062")
+dat <- harmonise_data(il6, outcome_cys)
+res <- mr(dat)
+mr_scatter_plot(res, dat)
+res
+dat %>%
+  view()
+```
+
+```{r}
+
+run_multivariate_models <- function(x) {
+
+  
+  # f <- as.formula(sprintf("Surv(time_event_pneumonia, had_pneumonia) ~ %s", x))
+ f <- as.formula(sprintf("Surv(time_event_infection, had_infection) ~ sex + age_at_entry + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + creatinine + %s" , x))
+# f <- as.formula(sprintf("Surv(time_event_infection, had_infection) ~ %s", x))
+m <- (coxph(formula = f, data = final))
+d <- summary(m)
+tidy(m, conf.int = T, exponentiate = T) %>%
+  mutate(rsq = d$rsq[1])
+}
+
+multi_v_res <- map_dfr("ln_crp", run_multivariate_models)
+multi_v_res %>%
+  view()
+
+multi_v_res <- map_dfr("ln_crp + body_mass_index_bmi", run_multivariate_models)
+
+#infection
+
+f <- as.formula(sprintf("Surv(time_event_infection, had_infection) ~ rcs(cystatin_c) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cre + body_mass_index_bmi " ))
+m <- (coxph(formula = f, data = final))
+g1 = termplot(m, term = 1, se = T,plot = F)
+g1 <- g1$cystatin_c %>% mutate(model = "Infection")
+
+f <- as.formula(sprintf("Surv(time_event_pneumonia, had_pneumonia) ~ rcs(cystatin_c) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cre + body_mass_index_bmi" ))
+m <- (coxph(formula = f, data = final))
+g2 = termplot(m, term = 1, se = T,plot = F)
+g2 <- g2$cystatin_c %>% mutate(model = "Pneumonia")
+
+f <- as.formula(sprintf("Surv(time_event_sepsis, had_sepsis) ~ rcs(cystatin_c) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cre+ body_mass_index_bmi" ))
+m <- (coxph(formula = f, data = final))
+g3 = termplot(m, term = 1, se = T,plot = F)
+g3 <- g3$cystatin_c%>% mutate(model = "Sepsis")
+
+
+f <- as.formula(sprintf("Surv(time_event_mi, had_mi) ~ rcs(cystatin_c) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + egfr_cre + body_mass_index_bmi" ))
+m <- (coxph(formula = f, data = final))
+g4 = termplot(m, term = 1, se = T,plot = F)
+g4 <- g4$cystatin_c %>% mutate(model = "MI")
+
+
+
+#infection
+
+f <- as.formula(sprintf("Surv(time_event_infection, had_infection) ~ rcs(cystatin_c) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + body_mass_index_bmi " ))
+m <- (coxph(formula = f, data = final))
+g1 = termplot(m, term = 1, se = T,plot = F)
+g1 <- g1$cystatin_c %>% mutate(model = "Infection")
+
+f <- as.formula(sprintf("Surv(time_event_pneumonia, had_pneumonia) ~ rcs(cystatin_c) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked  + body_mass_index_bmi" ))
+m <- (coxph(formula = f, data = final))
+g2 = termplot(m, term = 1, se = T,plot = F)
+g2 <- g2$cystatin_c %>% mutate(model = "Pneumonia")
+
+f <- as.formula(sprintf("Surv(time_event_sepsis, had_sepsis) ~ rcs(cystatin_c) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + body_mass_index_bmi" ))
+m <- (coxph(formula = f, data = final))
+g3 = termplot(m, term = 1, se = T,plot = F)
+g3 <- g3$cystatin_c%>% mutate(model = "Sepsis")
+
+
+f <- as.formula(sprintf("Surv(time_event_mi, had_mi) ~ rcs(cystatin_c) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked  + body_mass_index_bmi" ))
+m <- (coxph(formula = f, data = final))
+g4 = termplot(m, term = 1, se = T,plot = F)
+g4 <- g4$cystatin_c %>% mutate(model = "MI")
+
+
+quantile(final$cystatin_c, na.rm = T, 0.01)
+g2 %>%
+  view()
+g1 %>%
+  bind_rows(g2, g3, g4) %>%
+  as_tibble() %>%
+  mutate(lci = exp(y-se*1.96), uci = exp(y+se*1.96), y = exp(y)) %>%
+  ggplot(aes(x = x, y = y)) +
+  geom_line(aes(colour = model)) +
+  geom_ribbon(aes(ymin = lci, ymax = uci, fill = model), alpha = 0.3) +
+  scale_x_continuous(trans="log10") +
+  scale_y_continuous(trans="log2") +
+  xlab("Cystatin C (mg/l)") +
+  ylab("Hazard Ratio (HR)") +
+  theme_bw() +
+  xlim(0.635, 1.1428) +
+  ylim(0,2)
+  
+final %>%
+  ggplot(aes(x = cystatin_c)) +
+  geom_histogram() +
+    scale_x_continuous(trans="log10") 
+
+```
+
+residiuals
+
+```{r}
+m_resid <- lm(ln_crp ~ body_mass_index_bmi, data = final)
+tidy(m_resid)
+
+resid_df <- final %>%
+  drop_na(ln_crp, body_mass_index_bmi) %>%
+  mutate(crp_resid = m_resid$residuals)
+
+
+x <- "Surv(time_event_infection, had_infection)" 
+
+run_table_3 <- function(x, y) {
+f <- as.formula(sprintf(paste0(x, "~ crp_resid + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + creatinine + rcs(body_mass_index_bmi) ")))
+m <- (coxph(formula = f, data = resid_df))
+m1 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "nobmi")
+
+m1 
+}
+
+tab3 <- bind_rows(
+run_table_3("Surv(time_event_infection, had_infection)", "Infection"),
+run_table_3("Surv(time_event_pneumonia, had_pneumonia)", "Pneumonia"),
+run_table_3("Surv(time_event_sepsis, had_sepsis)", "Sepsis"))
+
+tab3 %>%
+  filter(term == "crp_resid") %>%
+  mutate(across(c(estimate,conf.low, conf.high, p.value),~ signif(.x, digits = 3))) %>%
+  transmute(model, estimate = paste0(estimate, " (", conf.low, "-",conf.high,")"), p.value, adj) %>%
+  gt::gt()
+
+```
+
+Transplant
+
+```{r}
+
+trans_cohort_tbl <- cox_ready %>%
+  select(eid, study_entry) %>%
+  left_join(transplant) %>%
+  filter(study_entry < transplant_date) %>%
+  right_join(cox_ready)
+
+cox_ready$c_reactive_protein
+
+trans_cohort_tbl %>%
+  drop_na(c_reactive_protein) %>%
+  mutate(has_transplant = if_else(is.na(transplant_date), "no SOT", "SOT")) %>%
+  select(age_at_entry, sex, history_stroke, history_MI, history_asthma, history_copd, history_dementia, history_liver, history_cancer, ever_smoked, townsend_deprivation_index_at_recruitment, body_mass_index_bmi, creatinine, c_reactive_protein, has_transplant) %>%
+  tbl_summary(by = "has_transplant") %>%
+  add_p()
+
+trans_cohort<- cox_ready %>%
+  select(eid, study_entry) %>%
+  left_join(transplant) %>%
+  filter(study_entry < transplant_date) %>%
+  left_join(cox_ready) %>%
+  mutate(time_to_transplant = difftime(transplant_date, study_entry))
+
+quantile(trans_cohort$t)
+```
+
+1.  primary care
+
+```{r}
+crp_only <- cox_ready %>%
+   select(eid, c_reactive_protein, study_entry)
+
+prim_care_crp %>%
+   filter(crp_gp != 0) %>%
+   filter(crp_gp != 5) %>%
+   left_join(crp_only) %>%
+   mutate(distance = abs(as.numeric(difftime(event_dt_crp, study_entry, units = "days")))) %>%
+   arrange(distance) %>%
+   group_by(eid) %>%
+   slice(1) %>%
+   ungroup() %>%
+   mutate(distance = cut2(distance, cuts = c(2,10,100))) %>%
+   drop_na(distance) %>%
+   ggplot(aes(x = (crp_gp), y = (c_reactive_protein))) +
+    geom_point() +
+    geom_smooth(method = "lm") +
+   facet_wrap(~ distance) +
+   theme_bw() +
+   scale_x_log10() +
+   scale_y_log10() +
+   xlab("Primary care CRP") +
+  ylab("CRP measured at biobank")
+
+
+
+prim_care_crp %>%
+  filter(crp_gp != 0) %>%
+   filter(crp_gp != 5) %>%
+   left_join(crp_only) %>%
+   mutate(distance = abs(as.numeric(difftime(event_dt_crp, study_entry, units = "days")))) %>%
+  arrange(distance) %>%   
+  group_by(eid) %>%
+   slice(1) %>%
+   ungroup() %>%
+   mutate(distance = cut2(distance, cuts = c(2,10,100))) %>%
+   drop_na(distance) %>%
+   group_by(distance) %>%
+   summarise(cor_c = cor(crp_gp, c_reactive_protein, use = "complete.obs"))
+
+
+
+cox_ready %>%
+   drop_na(c_reactive_protein) %>%
+   mutate(ever_tested_crp = if_else(eid %in% prim_care_crp$eid, "CRP measured", "Never measured")) %>%
+   select(age_at_entry, sex, history_stroke, history_MI, history_asthma, history_copd, history_dementia, history_liver, history_cancer, ever_smoked, townsend_deprivation_index_at_recruitment, body_mass_index_bmi, creatinine, c_reactive_protein, has_transplant, had_sepsis, had_pneumonia, had_infection) %>%
+   tbl_summary(by = "has_transplant") %>%
+   add_p()
+```
+
+Generate data
+
+```{r}
+set.seed(123)
+random_choice <- prim_care_crp %>%
+   filter(crp_gp != 0) %>%
+  filter(crp_gp != 5) %>%
+   left_join(crp_only) %>%
+  filter(event_dt_crp > study_entry) %>%
+   group_by(eid) %>%
+   sample_n(1)
+
+
+
+event_data <- random_choice %>%
+  select(eid, study_entry =  event_dt_crp) %>%
+  left_join(hes) %>%
+  mutate(event_dt = dmy(event_dt)) %>%
+  arrange(event_dt) %>%
+  filter(study_entry < event_dt) %>%
+  mutate(time_event = as.numeric(difftime(event_dt,study_entry,  units = "days"))) %>%
+  mutate(had_infection = if_else(time_event>0 ,1,0),
+         had_sepsis = if_else(organ_system == "Sepsis",1,0),
+         had_pneumonia = if_else(category == "Pneumonia",1,0),
+         )
+
+infection_events <- event_data %>%
+  group_by(eid) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(eid, time_event_infection = time_event, had_infection)
+
+quantile(infection_events$time_event_infection)
+
+sepsis_events <- event_data %>%
+  filter(had_sepsis ==1) %>%
+  group_by(eid) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(eid, time_event_sepsis = time_event, had_sepsis)
+
+quantile(sepsis_events$time_event_sepsis)
+
+pneumonia_events <- event_data %>%
+  filter(had_pneumonia ==1) %>%
+  group_by(eid) %>%
+  slice(1) %>%
+  ungroup() %>%
+  select(eid, time_event_pneumonia = time_event, had_pneumonia)
+
+quantile(pneumonia_events$time_event_pneumonia)
+```
+
+generate primary care cox
+
+```{r}
+
+quantile(cox_ready$crp_gp,c(0.))
+
+cox_ready <- covars %>%
+  inner_join(random_choice) %>%
+  left_join(infection_events) %>%
+  left_join(sepsis_events) %>%
+  left_join(pneumonia_events) %>%
+  replace_na(list(had_pneumonia =0, had_sepsis = 0, had_infection = 0)) %>%
+   mutate(max_fu = as.numeric(difftime(ymd("2020-12-31"),study_entry,  units = "days"))) %>%
+  mutate(time_event_infection = if_else(is.na(time_event_infection), max_fu, time_event_infection)) %>%
+  mutate(time_event_pneumonia = if_else(is.na(time_event_pneumonia), max_fu, time_event_pneumonia)) %>%
+  mutate(time_event_sepsis = if_else(is.na(time_event_sepsis), max_fu, time_event_sepsis)) %>%
+  mutate(time_to_death = as.numeric(difftime(date_of_death, study_entry, units = "days"))) %>%
+  mutate(time_event_infection= if_else(is.na(date_of_death), time_event_infection, time_to_death)) %>%
+  mutate(time_event_sepsis= if_else(is.na(date_of_death), time_event_sepsis, time_to_death)) %>%
+  mutate(time_event_pneumonia= if_else(is.na(date_of_death), time_event_pneumonia, time_to_death)) %>%
+  mutate(ln_crp = log(crp_gp))
+
+
+```
+
+```{r}
+
+run_table_2 <- function(x, y) {
+f <- as.formula(sprintf(paste0(x, "~ ln_crp + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + creatinine ")))
+m <- (coxph(formula = f, data = cox_ready))
+m1 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "nobmi")
+
+f <- as.formula(sprintf(paste0(x, "~ ln_crp + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + creatinine + body_mass_index_bmi ")))
+m <- (coxph(formula = f, data = cox_ready))
+m2 <- tidy(m, exponentiate = T, conf.int = T) %>% mutate(model = y) %>% mutate(adj = "bmi")
+m1 %>%
+  bind_rows(m2)
+}
+
+tab2 <- bind_rows(
+run_table_2("Surv(time_event_infection, had_infection)", "Infection"),
+run_table_2("Surv(time_event_pneumonia, had_pneumonia)", "Pneumonia"),
+run_table_2("Surv(time_event_sepsis, had_sepsis)", "Sepsis"))
+
+tab2 %>%
+  filter(term == "ln_crp") %>%
+  mutate(across(c(estimate,conf.low, conf.high, p.value),~ signif(.x, digits = 3))) %>%
+  transmute(model, estimate = paste0(estimate, " (", conf.low, "-",conf.high,")"), p.value, adj) %>%
+  group_by(model) %>%
+  gt::gt()
+```
+
+```{r}
+
+f <- as.formula(sprintf("Surv(time_event_infection, had_infection) ~ rcs(ln_crp) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + creatinine + rcs(body_mass_index_bmi)" ))
+m <- (coxph(formula = f, data = cox_ready))
+g1 = termplot(m, term = 1, se = T,plot = F)
+g1 <- g1$ln_crp %>% mutate(model = "Infection")
+
+f <- as.formula(sprintf("Surv(time_event_pneumonia, had_pneumonia) ~ rcs(ln_crp) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + creatinine + rcs(body_mass_index_bmi)" ))
+m <- (coxph(formula = f, data = cox_ready))
+g2 = termplot(m, term = 1, se = T,plot = F)
+g2 <- g2$ln_crp %>% mutate(model = "Pneumonia")
+
+f <- as.formula(sprintf("Surv(time_event_sepsis, had_sepsis) ~ rcs(ln_crp) + sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + creatinine + rcs(body_mass_index_bmi)" ))
+m <- (coxph(formula = f, data = cox_ready))
+g3 = termplot(m, term = 1, se = T,plot = F)
+g3 <- g3$ln_crp %>% mutate(model = "Sepsis")
+
+
+
+
+g1 %>%
+  bind_rows(g2, g3) %>%
+  as_tibble() %>%
+  filter(x >-0.5) %>%
+  mutate(lci = exp(y-se*1.96), uci = exp(y+se*1.96), y = exp(y), x = exp(x)) %>%
+  ggplot(aes(x = x, y = y)) +
+  geom_line(aes(colour = model)) +
+  geom_ribbon(aes(ymin = lci, ymax = uci, fill = model), alpha = 0.3) +
+  scale_y_continuous(trans="log2") +
+  xlab("C reactive protein (mg/l)") +
+  ylab("Hazard Ratio (HR)") +
+  theme_bw() +
+  scale_x_continuous(trans="log10") 
+```
+
+```{r}
+
+predictors <- append(colnames(log_scaled), colnames(scaled))
+# predictors <- append(predictors, colnames(metab_model[2:649]))                    
+                     
+biom<-predictors %>%
+  str_subset("c_react|albu|neutro|lymph|gluc|hdl|plate|body_mass|creati|haemo")
+                     
+glance(m)
+
+run_multivariate_models <- function(x) {
+
+  
+  # f <- as.formula(sprintf("Surv(time_event_pneumonia, had_pneumonia) ~ %s", x))
+ f <- as.formula(sprintf("Surv(time_event_infection, had_infection) ~ sex + rcs(age_at_entry) + uk_biobank_assessment_centre + history_stroke + history_MI + history_copd + history_liver + history_cancer + ever_smoked + %s", x))
+# f <- as.formula(sprintf("Surv(time_event_infection, had_infection) ~ %s", x))
+m <- (coxph(formula = f, data = final))
+d <- glance(m)
+tidy(m, conf.int = T, exponentiate = T) %>%
+  filter(term == x) %>%
+  mutate(AIC = d$AIC)
+}
+
+multi_v_res <- map_dfr(biom, run_multivariate_models)
+multi_v_res %>%
+  mutate(name = str_remove(term, "_log_scaled"),
+         name = str_remove(name, "_scaled")) %>%
+  group_by(name) %>%
+  arrange(AIC) %>%
+  slice(1) %>%
+  ungroup() %>%
+  mutate(estimate = log(estimate)) %>%
+  arrange(-estimate) %>%
+  ggforestplot::forestplot(name = name, estimate = estimate, se = std.error, logodds = T ) +
+  theme_bw() +
+  xlab("Hazard ratio (95% CI)") 
+
+glance(m)$AIC
+
+
+```
+
+```{r}
+glm(Sepsis.case ~ L_HDL_C + age_at_entry + sex + bmi + crp + alcohol_intake_freq + diabetes + smoking  + recruitment_centre, data = metabs_old) %>%
+  tidy()
+
+```
+
+Figure 2
+
+```{r}
+
+labels_crp <- cox_ready %>%
+  drop_na(c_reactive_protein) %>%
+  mutate(c_reactive_protein = Hmisc::cut2(c_reactive_protein, g = 10)) %>%
+  count(c_reactive_protein) %>%
+  pull(c_reactive_protein)
+
+labels_bmi <- cox_ready %>%
+  drop_na(body_mass_index_bmi) %>%
+  mutate(c_reactive_protein = Hmisc::cut2(body_mass_index_bmi,g = 10)) %>%
+  count(c_reactive_protein) %>%
+  pull(c_reactive_protein)
+
+ p1 <-cox_ready %>%
+   mutate(c_reactive_protein = Hmisc::cut2(c_reactive_protein,g = 10)) %>%
+     drop_na(c_reactive_protein) %>%
+  group_by(c_reactive_protein) %>%
+  summarise(
+            cmean_infect = mean(had_infection)) %>%
+   pivot_longer(contains("mean")) %>%
+   ggplot(aes(x = c_reactive_protein, y = value, fill = (name))) +
+   geom_col(position = "dodge") +
+   theme_bw() +
+   ylab("Proportion with event") +
+   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+   xlab("C reactive protein (mg/L)") +
+   scale_fill_discrete(labels=c('Sepsis', 'Pneumonia', 'All infection')) +
+  theme(legend.title= element_blank(), legend.position = "bottom")
+ 
+
+p2<-  cox_ready %>%
+   mutate(c_reactive_protein = Hmisc::cut2(body_mass_index_bmi,g = 10)) %>%
+     drop_na(c_reactive_protein) %>%
+  group_by(c_reactive_protein) %>%
+  summarise(
+            amean_sepsis = mean(had_sepsis),
+            bmean_pneumonia = mean(had_pneumonia),
+            cmean_infect = mean(had_infection)) %>%
+   pivot_longer(contains("mean")) %>%
+   ggplot(aes(x = c_reactive_protein, y = value, fill = (name))) +
+   geom_col(position = "dodge") +
+   theme_bw() +
+   ylab("Proportion with event") +
+   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+    xlab("Body mass index (kg/m2)") +
+   scale_fill_discrete(labels=c('Sepsis', 'Pneumonia', 'All infection')) +
+  theme(legend.title= element_blank(), legend.position = "bottom")
+
+
+cox_ready %>%
+   mutate(c_reactive_protein = ntile(c_reactive_protein, 10)) %>%
+     drop_na(c_reactive_protein) %>%
+  group_by(c_reactive_protein) %>%
+  summarise(
+            amean_sepsis = mean(had_sepsis),
+            bmean_pneumonia = mean(had_pneumonia),
+            cmean_pneumonia = mean(had_infection)) %>%
+   pivot_longer(contains("mean")) %>%
+   ggplot(aes(x = c_reactive_protein, y = value, colour= (name))) +
+   geom_point() +
+  geom_line() +
+   theme_bw() +
+   ylab("Proportion with event") +
+   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) +
+   xlab("C reactive protein (mg/L)") +
+   scale_fill_discrete(labels=c('Sepsis', 'Pneumonia', 'All infection')) +
+  theme(legend.title= element_blank(), legend.position = "bottom") + scale_x_continuous(breaks = 1:10,
+    labels = labels_crp)
+
+
+p1/p2 + plot_layout(guides = "collect") & theme(legend.position = 'bottom')
+```
